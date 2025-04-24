@@ -1,0 +1,21 @@
+# Core dependencies
+openai>=1.0.0
+requests>=2.30.0
+python-dotenv>=1.0.0
+
+# Data processing and visualization
+numpy>=1.22.0
+pandas>=1.5.0
+matplotlib>=3.6.0
+networkx>=3.0.0
+
+# For PEFT model handling (based on model.py references)
+transformers>=4.30.0
+torch>=2.0.0
+peft>=0.4.0
+
+# For testing
+pytest>=7.0.0
+
+# For logging
+python-json-logger>=2.0.0
