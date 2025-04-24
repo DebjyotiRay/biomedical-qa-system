@@ -1,0 +1,812 @@
+2025-04-15 14:14:49,672 - INFO - Configuration loaded from config.json
+2025-04-15 14:14:50,081 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-15 14:14:50,081 - INFO - Using HTTP Proxy: 172.31.2.4:8080")
+2025-04-15 14:14:50,081 - INFO - Using HTTPS Proxy: 172.31.2.4:8080")
+2025-04-15 14:14:50,081 - INFO - NCBI API Key found in environment.
+2025-04-15 14:14:50,082 - ERROR - Failed to initialize OpenAI client: Unknown scheme for proxy URL URL('os.environ.get(%22HTTP_PROXY%22,%20%22http://iec2022111:Deepshikha%400104@172.31.2.4:8080%22)')
+2025-04-15 14:14:50,082 - INFO - .env file loaded successfully.
+2025-04-15 14:15:08,064 - INFO - Configuration loaded from config.json
+2025-04-15 14:15:08,446 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-15 14:15:08,446 - INFO - Using HTTP Proxy: 172.31.2.4:8080")
+2025-04-15 14:15:08,446 - INFO - Using HTTPS Proxy: 172.31.2.4:8080")
+2025-04-15 14:15:08,446 - INFO - NCBI API Key found in environment.
+2025-04-15 14:15:08,446 - ERROR - Failed to initialize OpenAI client: Unknown scheme for proxy URL URL('os.environ.get(%22HTTP_PROXY%22,%20%22http://iec2022111:Deepshikha%400104@172.31.2.4:8080%22)')
+2025-04-15 14:15:08,447 - INFO - .env file loaded successfully.
+2025-04-15 14:15:08,447 - INFO - Searching PubMed for user query: 'What genes are associated with Parkinson's disease?'
+2025-04-15 14:15:08,447 - INFO - Extracted entities - keywords: 13
+2025-04-15 14:15:08,448 - INFO - Using rule-based query optimization
+2025-04-15 14:15:08,448 - INFO - Optimized query: (Genes, Medical[MeSH Terms] OR Genetic Predisposition to Disease[MeSH Terms] OR Mutation[MeSH Terms] OR "gene"[Title/Abstract] OR "genetic*"[Title/Abstract] OR "mutation*"[Title/Abstract] OR "variant*"[Title/Abstract] OR "allele*"[Title/Abstract] OR "polymorphism*"[Title/Abstract])
+2025-04-15 14:15:08,448 - INFO - Constructed PubMed query: ((Genes, Medical[MeSH Terms] OR Genetic Predisposition to Disease[MeSH Terms] OR Mutation[MeSH Terms] OR "gene"[Title/Abstract] OR "genetic*"[Title/Abstract] OR "mutation*"[Title/Abstract] OR "variant*"[Title/Abstract] OR "allele*"[Title/Abstract] OR "polymorphism*"[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-04-15 14:15:08,448 - INFO - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-04-15 14:15:08,448 - INFO - Trying JSON esearch -> XML efetch...
+2025-04-15 14:15:08,449 - WARNING - Request error on attempt 1/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 14:15:08,449 - WARNING - Retrying in 1.10 seconds...
+2025-04-15 14:15:09,556 - WARNING - Request error on attempt 2/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 14:15:09,557 - WARNING - Retrying in 2.71 seconds...
+2025-04-15 14:15:12,274 - WARNING - Request error on attempt 3/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 14:15:12,274 - ERROR - Max retries reached for RequestException.
+2025-04-15 14:15:12,274 - ERROR - JSON esearch -> XML efetch failed: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 766, in urlopen
+    conn = self._get_conn(timeout=pool_timeout)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 292, in _get_conn
+    return conn or self._new_conn()
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1067, in _new_conn
+    return self.ConnectionCls(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 594, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 146, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 854, in __init__
+    self._validate_host(self.host)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 1236, in _validate_host
+    raise InvalidURL(f"URL can't contain control characters. {host!r} "
+http.client.InvalidURL: URL can't contain control characters. 'os.environ.get("https_proxy", "http' (found at least ' ')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 766, in urlopen
+    conn = self._get_conn(timeout=pool_timeout)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 292, in _get_conn
+    return conn or self._new_conn()
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1067, in _new_conn
+    return self.ConnectionCls(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 594, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 146, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 854, in __init__
+    self._validate_host(self.host)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 1236, in _validate_host
+    raise InvalidURL(f"URL can't contain control characters. {host!r} "
+urllib3.exceptions.ProtocolError: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/debjyotiray/pdnet/biomed_qa_system_final/citations.py", line 343, in json_fallback_search
+    response = fetch_with_retry("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi", params, timeout=TIMEOUT_SHORT)
+  File "/Users/debjyotiray/pdnet/biomed_qa_system_final/citations.py", line 256, in fetch_with_retry
+    response = requests.get(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 14:15:12,286 - WARNING - Primary method yielded no results, trying XML esearch -> efetch...
+2025-04-15 14:15:12,292 - WARNING - Request error on attempt 1/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 14:15:12,292 - WARNING - Retrying in 1.81 seconds...
+2025-04-15 14:15:14,115 - WARNING - Request error on attempt 2/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 14:15:14,116 - WARNING - Retrying in 2.11 seconds...
+2025-04-15 14:15:16,238 - WARNING - Request error on attempt 3/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 14:15:16,239 - ERROR - Max retries reached for RequestException.
+2025-04-15 14:15:16,239 - ERROR - Critical error during PubMed fetching: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 766, in urlopen
+    conn = self._get_conn(timeout=pool_timeout)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 292, in _get_conn
+    return conn or self._new_conn()
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1067, in _new_conn
+    return self.ConnectionCls(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 594, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 146, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 854, in __init__
+    self._validate_host(self.host)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 1236, in _validate_host
+    raise InvalidURL(f"URL can't contain control characters. {host!r} "
+http.client.InvalidURL: URL can't contain control characters. 'os.environ.get("https_proxy", "http' (found at least ' ')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 766, in urlopen
+    conn = self._get_conn(timeout=pool_timeout)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 292, in _get_conn
+    return conn or self._new_conn()
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1067, in _new_conn
+    return self.ConnectionCls(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 594, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 146, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 854, in __init__
+    self._validate_host(self.host)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 1236, in _validate_host
+    raise InvalidURL(f"URL can't contain control characters. {host!r} "
+urllib3.exceptions.ProtocolError: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/debjyotiray/pdnet/biomed_qa_system_final/citations.py", line 619, in fetch_pubmed_citations
+    search_res = fetch_with_retry("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi", params, timeout=TIMEOUT_SHORT)
+  File "/Users/debjyotiray/pdnet/biomed_qa_system_final/citations.py", line 256, in fetch_with_retry
+    response = requests.get(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 14:15:16,240 - INFO - PubMed search completed in 7.79 seconds.
+2025-04-15 14:15:16,240 - WARNING - No relevant citations found for query 'What genes are associated with Parkinson's disease?' matching the criteria.
+2025-04-15 16:35:32,931 - INFO - Configuration loaded from config.json
+2025-04-15 16:35:33,382 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-15 16:35:33,382 - INFO - No proxy configuration used
+2025-04-15 16:35:33,382 - INFO - NCBI API Key found in environment.
+2025-04-15 16:35:33,383 - ERROR - Failed to initialize OpenAI client: Unknown scheme for proxy URL URL('os.environ.get(%22HTTP_PROXY%22,%20%22http://iec2022111:Deepshikha%400104@172.31.2.4:8080%22)')
+2025-04-15 16:35:33,383 - INFO - .env file loaded successfully.
+2025-04-15 16:35:33,383 - INFO - Searching PubMed for user query: 'What genes are associated with Parkinson's disease?'
+2025-04-15 16:35:33,384 - INFO - Extracted entities - keywords: 13
+2025-04-15 16:35:33,384 - INFO - Using rule-based query optimization
+2025-04-15 16:35:33,384 - INFO - Optimized query: (Genes, Medical[MeSH Terms] OR Genetic Predisposition to Disease[MeSH Terms] OR Mutation[MeSH Terms] OR "gene"[Title/Abstract] OR "genetic*"[Title/Abstract] OR "mutation*"[Title/Abstract] OR "variant*"[Title/Abstract] OR "allele*"[Title/Abstract] OR "polymorphism*"[Title/Abstract])
+2025-04-15 16:35:33,384 - INFO - Constructed PubMed query: ((Genes, Medical[MeSH Terms] OR Genetic Predisposition to Disease[MeSH Terms] OR Mutation[MeSH Terms] OR "gene"[Title/Abstract] OR "genetic*"[Title/Abstract] OR "mutation*"[Title/Abstract] OR "variant*"[Title/Abstract] OR "allele*"[Title/Abstract] OR "polymorphism*"[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-04-15 16:35:33,384 - INFO - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-04-15 16:35:33,384 - INFO - Trying JSON esearch -> XML efetch...
+2025-04-15 16:35:33,385 - WARNING - Request error on attempt 1/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:35:33,385 - WARNING - Retrying in 1.06 seconds...
+2025-04-15 16:35:34,450 - WARNING - Request error on attempt 2/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:35:34,450 - WARNING - Retrying in 2.70 seconds...
+2025-04-15 16:35:37,153 - WARNING - Request error on attempt 3/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:35:37,154 - ERROR - Max retries reached for RequestException.
+2025-04-15 16:35:37,154 - ERROR - JSON esearch -> XML efetch failed: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 766, in urlopen
+    conn = self._get_conn(timeout=pool_timeout)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 292, in _get_conn
+    return conn or self._new_conn()
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1067, in _new_conn
+    return self.ConnectionCls(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 594, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 146, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 854, in __init__
+    self._validate_host(self.host)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 1236, in _validate_host
+    raise InvalidURL(f"URL can't contain control characters. {host!r} "
+http.client.InvalidURL: URL can't contain control characters. 'os.environ.get("https_proxy", "http' (found at least ' ')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 766, in urlopen
+    conn = self._get_conn(timeout=pool_timeout)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 292, in _get_conn
+    return conn or self._new_conn()
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1067, in _new_conn
+    return self.ConnectionCls(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 594, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 146, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 854, in __init__
+    self._validate_host(self.host)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 1236, in _validate_host
+    raise InvalidURL(f"URL can't contain control characters. {host!r} "
+urllib3.exceptions.ProtocolError: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/debjyotiray/pdnet/biomed_qa_system_final/citations.py", line 349, in json_fallback_search
+    response = fetch_with_retry("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi", params, timeout=TIMEOUT_SHORT)
+  File "/Users/debjyotiray/pdnet/biomed_qa_system_final/citations.py", line 262, in fetch_with_retry
+    response = requests.get(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:35:37,163 - WARNING - Primary method yielded no results, trying XML esearch -> efetch...
+2025-04-15 16:35:37,167 - WARNING - Request error on attempt 1/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:35:37,167 - WARNING - Retrying in 1.28 seconds...
+2025-04-15 16:35:38,457 - WARNING - Request error on attempt 2/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:35:38,458 - WARNING - Retrying in 2.89 seconds...
+2025-04-15 16:35:41,359 - WARNING - Request error on attempt 3/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:35:41,360 - ERROR - Max retries reached for RequestException.
+2025-04-15 16:35:41,360 - ERROR - Critical error during PubMed fetching: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 766, in urlopen
+    conn = self._get_conn(timeout=pool_timeout)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 292, in _get_conn
+    return conn or self._new_conn()
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1067, in _new_conn
+    return self.ConnectionCls(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 594, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 146, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 854, in __init__
+    self._validate_host(self.host)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 1236, in _validate_host
+    raise InvalidURL(f"URL can't contain control characters. {host!r} "
+http.client.InvalidURL: URL can't contain control characters. 'os.environ.get("https_proxy", "http' (found at least ' ')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 766, in urlopen
+    conn = self._get_conn(timeout=pool_timeout)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 292, in _get_conn
+    return conn or self._new_conn()
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1067, in _new_conn
+    return self.ConnectionCls(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 594, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 146, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 854, in __init__
+    self._validate_host(self.host)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 1236, in _validate_host
+    raise InvalidURL(f"URL can't contain control characters. {host!r} "
+urllib3.exceptions.ProtocolError: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/debjyotiray/pdnet/biomed_qa_system_final/citations.py", line 625, in fetch_pubmed_citations
+    search_res = fetch_with_retry("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi", params, timeout=TIMEOUT_SHORT)
+  File "/Users/debjyotiray/pdnet/biomed_qa_system_final/citations.py", line 262, in fetch_with_retry
+    response = requests.get(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:35:41,362 - INFO - PubMed search completed in 7.98 seconds.
+2025-04-15 16:35:41,362 - WARNING - No relevant citations found for query 'What genes are associated with Parkinson's disease?' matching the criteria.
+2025-04-15 16:39:19,865 - INFO - Configuration loaded from config.json
+2025-04-15 16:39:20,326 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-15 16:39:20,326 - INFO - No proxy configuration used
+2025-04-15 16:39:20,326 - INFO - NCBI API Key found in environment.
+2025-04-15 16:39:20,327 - ERROR - Failed to initialize OpenAI client: Unknown scheme for proxy URL URL('os.environ.get(%22HTTP_PROXY%22,%20%22http://iec2022111:Deepshikha%400104@172.31.2.4:8080%22)')
+2025-04-15 16:39:20,327 - INFO - .env file loaded successfully.
+2025-04-15 16:39:20,327 - INFO - Searching PubMed for user query: 'What genes are associated with Parkinson's disease?'
+2025-04-15 16:39:20,328 - INFO - Extracted entities - keywords: 13
+2025-04-15 16:39:20,328 - INFO - Using rule-based query optimization
+2025-04-15 16:39:20,328 - INFO - Optimized query: (Genes, Medical[MeSH Terms] OR Genetic Predisposition to Disease[MeSH Terms] OR Mutation[MeSH Terms] OR "gene"[Title/Abstract] OR "genetic*"[Title/Abstract] OR "mutation*"[Title/Abstract] OR "variant*"[Title/Abstract] OR "allele*"[Title/Abstract] OR "polymorphism*"[Title/Abstract])
+2025-04-15 16:39:20,328 - INFO - Constructed PubMed query: ((Genes, Medical[MeSH Terms] OR Genetic Predisposition to Disease[MeSH Terms] OR Mutation[MeSH Terms] OR "gene"[Title/Abstract] OR "genetic*"[Title/Abstract] OR "mutation*"[Title/Abstract] OR "variant*"[Title/Abstract] OR "allele*"[Title/Abstract] OR "polymorphism*"[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-04-15 16:39:20,328 - INFO - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-04-15 16:39:20,328 - INFO - Trying JSON esearch -> XML efetch...
+2025-04-15 16:39:20,329 - WARNING - Request error on attempt 1/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:39:20,329 - WARNING - Retrying in 1.38 seconds...
+2025-04-15 16:39:21,716 - WARNING - Request error on attempt 2/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:39:21,716 - WARNING - Retrying in 2.89 seconds...
+2025-04-15 16:39:24,608 - WARNING - Request error on attempt 3/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:39:24,608 - ERROR - Max retries reached for RequestException.
+2025-04-15 16:39:24,608 - ERROR - JSON esearch -> XML efetch failed: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 766, in urlopen
+    conn = self._get_conn(timeout=pool_timeout)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 292, in _get_conn
+    return conn or self._new_conn()
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1067, in _new_conn
+    return self.ConnectionCls(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 594, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 146, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 854, in __init__
+    self._validate_host(self.host)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 1236, in _validate_host
+    raise InvalidURL(f"URL can't contain control characters. {host!r} "
+http.client.InvalidURL: URL can't contain control characters. 'os.environ.get("https_proxy", "http' (found at least ' ')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 766, in urlopen
+    conn = self._get_conn(timeout=pool_timeout)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 292, in _get_conn
+    return conn or self._new_conn()
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1067, in _new_conn
+    return self.ConnectionCls(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 594, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 146, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 854, in __init__
+    self._validate_host(self.host)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 1236, in _validate_host
+    raise InvalidURL(f"URL can't contain control characters. {host!r} "
+urllib3.exceptions.ProtocolError: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/debjyotiray/pdnet/biomed_qa_system_final/citations.py", line 355, in json_fallback_search
+    response = fetch_with_retry("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi", params, timeout=TIMEOUT_SHORT)
+  File "/Users/debjyotiray/pdnet/biomed_qa_system_final/citations.py", line 268, in fetch_with_retry
+    response = requests.get(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:39:24,616 - WARNING - Primary method yielded no results, trying XML esearch -> efetch...
+2025-04-15 16:39:24,621 - WARNING - Request error on attempt 1/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:39:24,622 - WARNING - Retrying in 1.82 seconds...
+2025-04-15 16:39:26,451 - WARNING - Request error on attempt 2/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:39:26,451 - WARNING - Retrying in 2.04 seconds...
+2025-04-15 16:39:28,492 - WARNING - Request error on attempt 3/3 (Status: None): ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:39:28,492 - ERROR - Max retries reached for RequestException.
+2025-04-15 16:39:28,492 - ERROR - Critical error during PubMed fetching: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 766, in urlopen
+    conn = self._get_conn(timeout=pool_timeout)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 292, in _get_conn
+    return conn or self._new_conn()
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1067, in _new_conn
+    return self.ConnectionCls(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 594, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 146, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 854, in __init__
+    self._validate_host(self.host)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 1236, in _validate_host
+    raise InvalidURL(f"URL can't contain control characters. {host!r} "
+http.client.InvalidURL: URL can't contain control characters. 'os.environ.get("https_proxy", "http' (found at least ' ')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 766, in urlopen
+    conn = self._get_conn(timeout=pool_timeout)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 292, in _get_conn
+    return conn or self._new_conn()
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1067, in _new_conn
+    return self.ConnectionCls(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 594, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/urllib3/connection.py", line 146, in __init__
+    super().__init__(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 854, in __init__
+    self._validate_host(self.host)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/http/client.py", line 1236, in _validate_host
+    raise InvalidURL(f"URL can't contain control characters. {host!r} "
+urllib3.exceptions.ProtocolError: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/debjyotiray/pdnet/biomed_qa_system_final/citations.py", line 631, in fetch_pubmed_citations
+    search_res = fetch_with_retry("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi", params, timeout=TIMEOUT_SHORT)
+  File "/Users/debjyotiray/pdnet/biomed_qa_system_final/citations.py", line 268, in fetch_with_retry
+    response = requests.get(
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/anaconda3/envs/pdnet-venv/lib/python3.10/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', InvalidURL('URL can\'t contain control characters. \'os.environ.get("https_proxy", "http\' (found at least \' \')'))
+2025-04-15 16:39:28,493 - INFO - PubMed search completed in 8.17 seconds.
+2025-04-15 16:39:28,493 - WARNING - No relevant citations found for query 'What genes are associated with Parkinson's disease?' matching the criteria.
+2025-04-15 16:47:20,465 - INFO - Configuration loaded from config.json
+2025-04-15 16:47:20,896 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-15 16:47:20,896 - INFO - Removing HTTP_PROXY from environment
+2025-04-15 16:47:20,896 - INFO - Removing HTTPS_PROXY from environment
+2025-04-15 16:47:20,896 - INFO - Using empty proxy configuration for all requests
+2025-04-15 16:47:20,896 - INFO - NCBI API Key found in environment.
+2025-04-15 16:47:20,954 - INFO - OpenAI client initialized for entity extraction.
+2025-04-15 16:47:20,954 - INFO - .env file loaded successfully.
+2025-04-15 16:47:20,955 - INFO - Searching PubMed for user query: 'What genes are associated with Parkinson's disease?'
+2025-04-15 16:47:20,955 - INFO - Extracting entities using OpenAI API
+2025-04-15 16:47:23,259 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 16:47:23,264 - INFO - Extracted 1 entities using LLM: Diseases:1
+2025-04-15 16:47:23,264 - INFO - Extracted entities - Diseases: 1
+2025-04-15 16:47:25,085 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 16:47:25,093 - INFO - Generated LLM-optimized PubMed query: ```("Parkinson Disease"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR "Gene"[Title/Abstract] OR "Genetic"[Title/Abstract] OR "Genetics"[Title/Abstract] OR "Genomic"[Title/Abstract] OR "Genome"[Title/Abstract])```
+2025-04-15 16:47:25,093 - INFO - Optimized query: ```("Parkinson Disease"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR "Gene"[Title/Abstract] OR "Genetic"[Title/Abstract] OR "Genetics"[Title/Abstract] OR "Genomic"[Title/Abstract] OR "Genome"[Title/Abstract])```
+2025-04-15 16:47:25,093 - INFO - Constructed PubMed query: (```("Parkinson Disease"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR "Gene"[Title/Abstract] OR "Genetic"[Title/Abstract] OR "Genetics"[Title/Abstract] OR "Genomic"[Title/Abstract] OR "Genome"[Title/Abstract])```) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-04-15 16:47:25,093 - INFO - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-04-15 16:47:25,094 - INFO - Trying JSON esearch -> XML efetch...
+2025-04-15 16:47:26,347 - INFO - Found 6 PMIDs via JSON esearch, fetching details...
+2025-04-15 16:47:28,731 - INFO - PubMed search completed in 3.64 seconds.
+2025-04-15 16:51:26,736 - INFO - Configuration loaded from config.json
+2025-04-15 16:51:27,152 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-15 16:51:27,152 - INFO - Using HTTP Proxy: 172.31.2.4:8080
+2025-04-15 16:51:27,152 - INFO - Using HTTPS Proxy: 172.31.2.4:8080
+2025-04-15 16:51:27,152 - INFO - Proxy enabled via config.json settings
+2025-04-15 16:51:27,152 - INFO - NCBI API Key found in environment.
+2025-04-15 16:51:27,153 - ERROR - Failed to initialize OpenAI client: Unknown scheme for proxy URL URL('os.environ.get(%22HTTP_PROXY%22,%20%22http://iec2022111:Deepshikha%400104@172.31.2.4:8080%22)')
+2025-04-15 16:51:27,153 - INFO - .env file loaded successfully.
+2025-04-15 16:51:27,154 - WARNING - LLM use requested but OpenAI client unavailable. Using regex-based extraction.
+2025-04-15 16:51:27,154 - INFO - Searching PubMed for user query: 'What genes are involved in Parkinson's disease pathogenesis?'
+2025-04-15 16:51:27,154 - INFO - Extracted entities - keywords: 13
+2025-04-15 16:51:27,154 - INFO - Using rule-based query optimization
+2025-04-15 16:51:27,154 - INFO - Optimized query: (Genes, Medical[MeSH Terms] OR Genetic Predisposition to Disease[MeSH Terms] OR Mutation[MeSH Terms] OR "gene"[Title/Abstract] OR "genetic*"[Title/Abstract] OR "mutation*"[Title/Abstract] OR "variant*"[Title/Abstract] OR "allele*"[Title/Abstract] OR "polymorphism*"[Title/Abstract])
+2025-04-15 16:51:27,154 - INFO - Constructed PubMed query: ((Genes, Medical[MeSH Terms] OR Genetic Predisposition to Disease[MeSH Terms] OR Mutation[MeSH Terms] OR "gene"[Title/Abstract] OR "genetic*"[Title/Abstract] OR "mutation*"[Title/Abstract] OR "variant*"[Title/Abstract] OR "allele*"[Title/Abstract] OR "polymorphism*"[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-04-15 16:51:27,154 - INFO - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-04-15 16:51:27,154 - INFO - Trying JSON esearch -> XML efetch...
+2025-04-15 16:51:28,929 - INFO - Found 6 PMIDs via JSON esearch, fetching details...
+2025-04-15 16:51:30,421 - INFO - PubMed search completed in 3.27 seconds.
+2025-04-15 16:51:30,422 - INFO - Potential genes identified in top citations: PTEN
+2025-04-15 17:03:26,920 - INFO - Configuration loaded from config.json
+2025-04-15 17:03:27,347 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-15 17:03:27,347 - INFO - Using HTTP Proxy: 172.31.2.4:8080
+2025-04-15 17:03:27,347 - INFO - Using HTTPS Proxy: 172.31.2.4:8080
+2025-04-15 17:03:27,347 - INFO - Proxy enabled via config.json settings
+2025-04-15 17:03:27,347 - INFO - NCBI API Key found in environment.
+2025-04-15 17:03:27,347 - INFO - Configuring OpenAI client with proxy host: 172.31.2.4:8080
+2025-04-15 17:03:27,347 - ERROR - Failed to initialize OpenAI client: Client.__init__() got an unexpected keyword argument 'proxies'
+2025-04-15 17:03:27,348 - INFO - .env file loaded successfully.
+2025-04-15 17:03:27,348 - WARNING - LLM use requested but OpenAI client unavailable. Using regex-based extraction.
+2025-04-15 17:03:27,348 - INFO - Searching PubMed for user query: 'What genes are involved in Parkinson's disease pathogenesis?'
+2025-04-15 17:03:27,348 - INFO - Extracted entities - keywords: 13
+2025-04-15 17:03:27,348 - INFO - Using rule-based query optimization
+2025-04-15 17:03:27,349 - INFO - Optimized query: (Genes, Medical[MeSH Terms] OR Genetic Predisposition to Disease[MeSH Terms] OR Mutation[MeSH Terms] OR "gene"[Title/Abstract] OR "genetic*"[Title/Abstract] OR "mutation*"[Title/Abstract] OR "variant*"[Title/Abstract] OR "allele*"[Title/Abstract] OR "polymorphism*"[Title/Abstract])
+2025-04-15 17:03:27,349 - INFO - Constructed PubMed query: ((Genes, Medical[MeSH Terms] OR Genetic Predisposition to Disease[MeSH Terms] OR Mutation[MeSH Terms] OR "gene"[Title/Abstract] OR "genetic*"[Title/Abstract] OR "mutation*"[Title/Abstract] OR "variant*"[Title/Abstract] OR "allele*"[Title/Abstract] OR "polymorphism*"[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-04-15 17:03:27,349 - INFO - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-04-15 17:03:27,349 - INFO - Trying JSON esearch -> XML efetch...
+2025-04-15 17:03:29,730 - INFO - Found 6 PMIDs via JSON esearch, fetching details...
+2025-04-15 17:03:31,314 - INFO - PubMed search completed in 3.97 seconds.
+2025-04-15 17:03:31,314 - INFO - Potential genes identified in top citations: PTEN
+2025-04-15 17:06:24,307 - INFO - Configuration loaded from config.json
+2025-04-15 17:06:24,680 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-15 17:06:24,680 - INFO - Using HTTP Proxy: 172.31.2.4:8080
+2025-04-15 17:06:24,680 - INFO - Using HTTPS Proxy: 172.31.2.4:8080
+2025-04-15 17:06:24,680 - INFO - Proxy enabled via config.json settings
+2025-04-15 17:06:24,680 - INFO - NCBI API Key found in environment.
+2025-04-15 17:06:24,680 - INFO - Configuring OpenAI client with proxy host: 172.31.2.4:8080
+2025-04-15 17:06:24,680 - ERROR - Failed to initialize OpenAI client: Client.__init__() got an unexpected keyword argument 'proxies'
+2025-04-15 17:06:24,681 - INFO - .env file loaded successfully.
+2025-04-15 17:06:24,681 - WARNING - LLM use requested but OpenAI client unavailable. Using regex-based extraction.
+2025-04-15 17:06:24,681 - INFO - Searching PubMed for user query: 'What are the key genes involved in LRRK2-associated Parkinson's disease pathogenesis?'
+2025-04-15 17:06:24,682 - INFO - Extracted entities - genes: 1
+2025-04-15 17:06:24,682 - INFO - Using rule-based query optimization
+2025-04-15 17:06:24,682 - INFO - Optimized query: (Genes, Medical[MeSH Terms] OR Genetic Predisposition to Disease[MeSH Terms] OR Mutation[MeSH Terms] OR "gene"[Title/Abstract] OR "genetic*"[Title/Abstract] OR "mutation*"[Title/Abstract] OR "variant*"[Title/Abstract] OR "allele*"[Title/Abstract] OR "polymorphism*"[Title/Abstract]) AND ("LRRK2"[Gene/Protein Name])
+2025-04-15 17:06:24,682 - INFO - Constructed PubMed query: ((Genes, Medical[MeSH Terms] OR Genetic Predisposition to Disease[MeSH Terms] OR Mutation[MeSH Terms] OR "gene"[Title/Abstract] OR "genetic*"[Title/Abstract] OR "mutation*"[Title/Abstract] OR "variant*"[Title/Abstract] OR "allele*"[Title/Abstract] OR "polymorphism*"[Title/Abstract]) AND ("LRRK2"[Gene/Protein Name])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-04-15 17:06:24,682 - INFO - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-04-15 17:06:24,682 - INFO - Trying JSON esearch -> XML efetch...
+2025-04-15 17:06:25,981 - INFO - Found 6 PMIDs via JSON esearch, fetching details...
+2025-04-15 17:06:27,781 - INFO - PubMed search completed in 3.10 seconds.
+2025-04-15 17:10:44,019 - INFO - Configuration loaded from config.json
+2025-04-15 17:10:44,362 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-15 17:10:44,362 - INFO - Using HTTP Proxy: 172.31.2.4:8080
+2025-04-15 17:10:44,362 - INFO - Using HTTPS Proxy: 172.31.2.4:8080
+2025-04-15 17:10:44,362 - INFO - Proxy enabled via config.json settings
+2025-04-15 17:10:44,362 - INFO - NCBI API Key found in environment.
+2025-04-15 17:10:44,362 - INFO - Configuring OpenAI client with proxy host: 172.31.2.4:8080
+2025-04-15 17:10:44,362 - INFO - Set proxy environment variables for OpenAI client
+2025-04-15 17:10:44,413 - INFO - OpenAI client initialized for entity extraction.
+2025-04-15 17:10:44,414 - INFO - .env file loaded successfully.
+2025-04-15 17:10:44,414 - INFO - Searching PubMed for user query: 'What genes interact with LRRK2 in Parkinson's disease?'
+2025-04-15 17:10:44,414 - INFO - Extracting entities using OpenAI API
+2025-04-15 17:10:46,309 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 17:10:46,324 - INFO - Extracted 2 entities using LLM: Genes:1, Diseases:1
+2025-04-15 17:10:46,325 - INFO - Extracted entities - Genes: 1, Diseases: 1
+2025-04-15 17:10:49,930 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 17:10:49,931 - INFO - Generated LLM-optimized PubMed query: ("LRRK2"[Gene Name] OR "Leucine-Rich Repeat Serine-Threonine Protein Kinase-2"[MeSH Terms]) AND ("Parkinson Disease"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract]) AND ("Gene Interaction"[MeSH Terms] OR "gene interaction"[Title/Abstract] OR "interact*"[Title/Abstract])
+2025-04-15 17:10:49,931 - INFO - Optimized query: ("LRRK2"[Gene Name] OR "Leucine-Rich Repeat Serine-Threonine Protein Kinase-2"[MeSH Terms]) AND ("Parkinson Disease"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract]) AND ("Gene Interaction"[MeSH Terms] OR "gene interaction"[Title/Abstract] OR "interact*"[Title/Abstract])
+2025-04-15 17:10:49,931 - INFO - Constructed PubMed query: (("LRRK2"[Gene Name] OR "Leucine-Rich Repeat Serine-Threonine Protein Kinase-2"[MeSH Terms]) AND ("Parkinson Disease"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract]) AND ("Gene Interaction"[MeSH Terms] OR "gene interaction"[Title/Abstract] OR "interact*"[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-04-15 17:10:49,931 - INFO - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-04-15 17:10:49,931 - INFO - Trying JSON esearch -> XML efetch...
+2025-04-15 17:10:51,355 - INFO - Found 10 PMIDs via JSON esearch, fetching details...
+2025-04-15 17:10:53,356 - INFO - PubMed search completed in 3.42 seconds.
+2025-04-16 11:20:06,837 - INFO - Configuration loaded from config.json
+2025-04-16 11:20:09,395 - INFO - HuggingFace transformers available for advanced entity extraction
+2025-04-16 11:20:09,733 - INFO - Configuring OpenAI client with proxy host: 172.31.2.4:8080
+2025-04-16 11:20:09,733 - INFO - Set proxy environment variables for OpenAI client
+2025-04-16 11:20:09,783 - INFO - OpenAI client initialized for entity extraction.
+2025-04-16 11:20:09,783 - INFO - Loading NER model on CPU
+2025-04-16 11:20:10,357 - ERROR - Error loading HuggingFace NER model: cambridgeltl/BioBERT-NER-NCBI-disease is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-16 11:22:58,070 - INFO - Configuration loaded from config.json
+2025-04-16 11:22:59,589 - INFO - HuggingFace transformers available for advanced entity extraction
+2025-04-16 11:22:59,992 - INFO - Configuring OpenAI client with proxy host: 172.31.2.4:8080
+2025-04-16 11:22:59,992 - INFO - Set proxy environment variables for OpenAI client
+2025-04-16 11:23:00,044 - INFO - OpenAI client initialized for entity extraction.
+2025-04-16 11:23:00,044 - INFO - Loading NER model on CPU
+2025-04-16 11:23:00,527 - ERROR - Error loading HuggingFace NER model: drAbreu/bioBERT-NER-NCBI-disease is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-16 11:23:00,527 - INFO - Extracting entities using OpenAI API
+2025-04-16 11:23:03,891 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-16 11:23:03,900 - INFO - Extracted 1 entities using OpenAI LLM: Diseases:1
+2025-04-16 11:23:06,008 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-16 11:23:06,011 - INFO - Generated OpenAI-optimized PubMed query: ("Parkinson Disease"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract] OR "Parkinsonism"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Association Studies"[MeSH Terms]) AND ("Genomics"[MeSH Terms] OR "Genome-Wide Association Study"[MeSH Terms] OR "Genetic Predisposition to Disease"[MeSH Terms])
+2025-04-16 11:23:18,788 - INFO - Configuration loaded from config.json
+2025-04-16 11:23:20,159 - INFO - HuggingFace transformers available for advanced entity extraction
+2025-04-16 11:23:20,535 - INFO - Configuring OpenAI client with proxy host: 172.31.2.4:8080
+2025-04-16 11:23:20,535 - INFO - Set proxy environment variables for OpenAI client
+2025-04-16 11:23:20,587 - INFO - OpenAI client initialized for entity extraction.
+2025-04-16 11:23:20,587 - INFO - Loading NER model on CPU
+2025-04-16 11:23:21,122 - ERROR - Error loading HuggingFace NER model: drAbreu/bioBERT-NER-NCBI-disease is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-16 11:23:21,122 - INFO - Extracting entities using OpenAI API
+2025-04-16 11:23:22,354 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-16 11:23:22,366 - INFO - Extracted 1 entities using OpenAI LLM: Diseases:1
+2025-04-16 11:23:23,876 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-16 11:23:23,882 - INFO - Generated OpenAI-optimized PubMed query: ("Parkinson Disease"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract] OR "Parkinsonism"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR "Gene Expression"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Predisposition to Disease"[MeSH Terms])
+2025-04-16 11:23:58,731 - INFO - Configuration loaded from config.json
+2025-04-16 11:24:00,220 - INFO - HuggingFace transformers available for advanced entity extraction
+2025-04-16 11:24:00,607 - INFO - Configuring OpenAI client with proxy host: 172.31.2.4:8080
+2025-04-16 11:24:00,607 - INFO - Set proxy environment variables for OpenAI client
+2025-04-16 11:24:00,659 - INFO - OpenAI client initialized for entity extraction.
+2025-04-16 11:24:00,659 - INFO - Loading NER model on CPU
+2025-04-16 11:24:01,476 - ERROR - Error loading HuggingFace NER model: drAbreu/bioBERT-NER-NCBI-disease is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-16 11:25:29,104 - INFO - Configuration loaded from config.json
+2025-04-16 11:25:29,458 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-16 11:25:29,459 - INFO - Configuration loaded from config.json
+2025-04-16 11:25:29,459 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-16 11:25:29,459 - INFO - Configuration loaded from config.json
+2025-04-16 11:25:29,459 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-16 11:25:29,459 - INFO - Using HTTP Proxy: 172.31.2.4:8080
+2025-04-16 11:25:29,459 - INFO - Using HTTPS Proxy: 172.31.2.4:8080
+2025-04-16 11:25:29,459 - INFO - Proxy enabled via config.json settings
+2025-04-16 11:25:29,459 - INFO - NCBI API Key found in environment.
+2025-04-16 11:25:29,460 - INFO - Configuring OpenAI client with proxy host: 172.31.2.4:8080
+2025-04-16 11:25:29,460 - INFO - Set proxy environment variables for OpenAI client
+2025-04-16 11:25:29,510 - INFO - OpenAI client initialized for entity extraction.
+2025-04-16 11:25:29,510 - INFO - .env file loaded successfully.
+2025-04-16 11:25:29,511 - INFO - Searching PubMed for user query: 'What genes are associated with Parkinson's disease?'
+2025-04-16 11:25:29,511 - INFO - Extracting entities using OpenAI API
+2025-04-16 11:25:30,767 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-16 11:25:30,779 - INFO - Extracted 1 entities using LLM: Diseases:1
+2025-04-16 11:25:30,779 - INFO - Extracted entities - Diseases: 1
+2025-04-16 11:25:32,189 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-16 11:25:32,192 - INFO - Generated LLM-optimized PubMed query: ("Parkinson Disease"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract] OR "Parkinsonism"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR "Gene Expression"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Predisposition to Disease"[MeSH Terms])
+2025-04-16 11:25:32,193 - INFO - Optimized query: ("Parkinson Disease"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract] OR "Parkinsonism"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR "Gene Expression"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Predisposition to Disease"[MeSH Terms])
+2025-04-16 11:25:32,193 - INFO - Constructed PubMed query: (("Parkinson Disease"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract] OR "Parkinsonism"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR "Gene Expression"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Predisposition to Disease"[MeSH Terms])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-04-16 11:25:32,193 - INFO - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-04-16 11:25:32,193 - INFO - Trying JSON esearch -> XML efetch...
+2025-04-16 11:25:34,462 - INFO - Found 6 PMIDs via JSON esearch, fetching details...
+2025-04-16 11:25:36,408 - INFO - PubMed search completed in 4.21 seconds.
+2025-04-16 11:25:52,245 - INFO - Configuration loaded from config.json
+2025-04-16 11:25:52,600 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-16 11:25:52,601 - INFO - Configuration loaded from config.json
+2025-04-16 11:25:52,601 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-16 11:25:52,601 - INFO - Configuration loaded from config.json
+2025-04-16 11:25:52,601 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-16 11:25:52,602 - INFO - Using HTTP Proxy: 172.31.2.4:8080
+2025-04-16 11:25:52,602 - INFO - Using HTTPS Proxy: 172.31.2.4:8080
+2025-04-16 11:25:52,602 - INFO - Proxy enabled via config.json settings
+2025-04-16 11:25:52,602 - INFO - NCBI API Key found in environment.
+2025-04-16 11:25:52,602 - INFO - Configuring OpenAI client with proxy host: 172.31.2.4:8080
+2025-04-16 11:25:52,602 - INFO - Set proxy environment variables for OpenAI client
+2025-04-16 11:25:52,650 - INFO - OpenAI client initialized for entity extraction.
+2025-04-16 11:25:52,650 - INFO - .env file loaded successfully.
+2025-04-16 11:25:52,651 - INFO - Searching PubMed for user query: 'What genes are associated with Parkinson's disease?'
+2025-04-16 11:25:52,651 - INFO - Extracting entities using OpenAI API
+2025-04-16 11:25:54,283 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-16 11:25:54,292 - INFO - Extracted 1 entities using LLM: Diseases:1
+2025-04-16 11:25:54,292 - INFO - Extracted entities - Diseases: 1
+2025-04-16 11:25:55,880 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-16 11:25:55,881 - INFO - Generated LLM-optimized PubMed query: "Parkinson Disease/genetics"[MeSH] AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Association Studies"[MeSH Terms])
+2025-04-16 11:25:55,881 - INFO - Optimized query: "Parkinson Disease/genetics"[MeSH] AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Association Studies"[MeSH Terms])
+2025-04-16 11:25:55,881 - INFO - Constructed PubMed query: ("Parkinson Disease/genetics"[MeSH] AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Association Studies"[MeSH Terms])) AND ((2015/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-04-16 11:25:55,881 - INFO - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-04-16 11:25:55,881 - INFO - Trying JSON esearch -> XML efetch...
+2025-04-16 11:25:57,644 - INFO - Found 10 PMIDs via JSON esearch, fetching details...
+2025-04-16 11:26:00,583 - INFO - PubMed search completed in 4.70 seconds.
+2025-04-16 11:26:00,584 - INFO - Potential genes identified in top citations: MDS
+2025-04-16 11:26:02,915 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-16 11:26:02,918 - INFO - Generated LLM-optimized PubMed query: ("Parkinson Disease/genetics"[MeSH] OR "Parkinson Disease"[Title/Abstract] OR "Parkinson's disease"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract] OR allele*[Title/Abstract] OR variant*[Title/Abstract] OR mutation*[Title/Abstract] OR polymorphism*[Title/Abstract]) NOT (cancer[Title/Abstract] OR syndrome[Title/Abstract])
+2025-04-16 11:26:35,706 - INFO - Configuration loaded from config.json
+2025-04-16 11:26:36,060 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-16 11:26:36,061 - INFO - Configuration loaded from config.json
+2025-04-16 11:26:36,061 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-16 11:26:36,061 - INFO - Configuration loaded from config.json
+2025-04-16 11:26:36,061 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-16 11:26:36,061 - INFO - Using HTTP Proxy: 172.31.2.4:8080
+2025-04-16 11:26:36,061 - INFO - Using HTTPS Proxy: 172.31.2.4:8080
+2025-04-16 11:26:36,061 - INFO - Proxy enabled via config.json settings
+2025-04-16 11:26:36,061 - INFO - NCBI API Key found in environment.
+2025-04-16 11:26:36,061 - INFO - Configuring OpenAI client with proxy host: 172.31.2.4:8080
+2025-04-16 11:26:36,061 - INFO - Set proxy environment variables for OpenAI client
+2025-04-16 11:26:36,123 - INFO - OpenAI client initialized for entity extraction.
+2025-04-16 11:26:36,123 - INFO - .env file loaded successfully.
+2025-04-16 11:26:45,522 - INFO - Configuration loaded from config.json
+2025-04-16 11:26:45,840 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-16 11:26:45,840 - INFO - Configuration loaded from config.json
+2025-04-16 11:26:45,840 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-16 11:26:45,841 - INFO - Configuration loaded from config.json
+2025-04-16 11:26:45,841 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-16 11:26:45,841 - INFO - Using HTTP Proxy: 172.31.2.4:8080
+2025-04-16 11:26:45,841 - INFO - Using HTTPS Proxy: 172.31.2.4:8080
+2025-04-16 11:26:45,841 - INFO - Proxy enabled via config.json settings
+2025-04-16 11:26:45,841 - INFO - NCBI API Key found in environment.
+2025-04-16 11:26:45,841 - INFO - Configuring OpenAI client with proxy host: 172.31.2.4:8080
+2025-04-16 11:26:45,841 - INFO - Set proxy environment variables for OpenAI client
+2025-04-16 11:26:45,889 - INFO - OpenAI client initialized for entity extraction.
+2025-04-16 11:26:45,890 - INFO - .env file loaded successfully.
+2025-04-16 11:26:45,890 - INFO - Searching PubMed for user query: 'How does the mTOR pathway affect autophagy in cancer cells?'
+2025-04-16 11:26:45,890 - INFO - Extracting entities using OpenAI API
+2025-04-16 11:26:47,137 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-16 11:26:47,145 - INFO - Extracted 4 entities using LLM: Diseases:1, Pathways:2, Keywords:1
+2025-04-16 11:26:47,145 - INFO - Extracted entities - Diseases: 1, Pathways: 2, Keywords: 1
+2025-04-16 11:26:48,801 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-16 11:26:48,805 - INFO - Generated LLM-optimized PubMed query: ("Neoplasms"[MeSH Terms] OR cancer[Title/Abstract] OR "cancer cells"[Title/Abstract]) AND ("MTOR"[MeSH Terms] OR "mTOR pathway"[Title/Abstract] OR "mammalian target of rapamycin"[Title/Abstract]) AND ("Autophagy"[MeSH Terms] OR autophagy[Title/Abstract])
+2025-04-16 11:26:48,806 - INFO - Optimized query: ("Neoplasms"[MeSH Terms] OR cancer[Title/Abstract] OR "cancer cells"[Title/Abstract]) AND ("MTOR"[MeSH Terms] OR "mTOR pathway"[Title/Abstract] OR "mammalian target of rapamycin"[Title/Abstract]) AND ("Autophagy"[MeSH Terms] OR autophagy[Title/Abstract])
+2025-04-16 11:26:48,807 - INFO - Constructed PubMed query: (("Neoplasms"[MeSH Terms] OR cancer[Title/Abstract] OR "cancer cells"[Title/Abstract]) AND ("MTOR"[MeSH Terms] OR "mTOR pathway"[Title/Abstract] OR "mammalian target of rapamycin"[Title/Abstract]) AND ("Autophagy"[MeSH Terms] OR autophagy[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-04-16 11:26:48,808 - INFO - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-04-16 11:26:48,808 - INFO - Trying JSON esearch -> XML efetch...
+2025-04-16 11:26:50,070 - INFO - Found 6 PMIDs via JSON esearch, fetching details...
+2025-04-16 11:26:51,727 - INFO - PubMed search completed in 2.92 seconds.
+2025-04-16 11:26:51,727 - INFO - Potential genes identified in top citations: AKT, PI3K
+2025-04-24 12:28:57,500 - INFO - Configuration loaded from config.json
+2025-04-24 12:28:57,501 - INFO - Proxy disabled in config - removing HTTP_PROXY from environment
+2025-04-24 12:28:57,501 - INFO - Proxy disabled in config - removing HTTPS_PROXY from environment
+2025-04-24 12:28:57,989 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-24 12:28:57,989 - INFO - Configuration loaded from config.json
+2025-04-24 12:28:57,989 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-24 12:28:57,990 - INFO - Configuration loaded from config.json
+2025-04-24 12:28:57,990 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-04-24 12:28:57,990 - INFO - Proxy not configured or disabled in config.json settings
+2025-04-24 12:28:57,990 - INFO - NCBI API Key found in environment.
+2025-04-24 12:28:57,990 - INFO - Initializing OpenAI client without proxy configuration
+2025-04-24 12:28:58,046 - INFO - OpenAI client initialized for entity extraction.
+2025-04-24 12:28:58,047 - INFO - .env file loaded successfully.
+2025-04-24 12:28:58,075 - INFO - Searching PubMed for user query: 'How many days will it take to aggregate parkinsons disease pathology in primary neurons?' (called from __main__)
+2025-04-24 12:28:58,075 - INFO - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-04-24 12:28:58,075 - INFO - Environment check - NCBI_API_KEY: Available
+2025-04-24 12:28:58,075 - INFO - Environment check - OPENAI_CLIENT: Available
+2025-04-24 12:28:58,075 - INFO - Entity extraction method: LLM-based
+2025-04-24 12:28:58,075 - INFO - Extracting entities using OpenAI API
+2025-04-24 12:28:59,275 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-24 12:28:59,281 - INFO - Extracted 4 entities using LLM: Diseases:1, Keywords:3
+2025-04-24 12:28:59,281 - INFO - Extracted entities - Diseases: 1, Keywords: 3
+2025-04-24 12:29:00,586 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-24 12:29:00,590 - INFO - Generated LLM-optimized PubMed query: ("Parkinson Disease/pathology"[MeSH] OR "Parkinson's disease"[Title/Abstract]) AND ("Neurons"[MeSH] OR "primary neurons"[Title/Abstract]) AND (aggregate*[Title/Abstract] OR aggregation[Title/Abstract]) AND ("Time Factors"[MeSH] OR days[Title/Abstract])
+2025-04-24 12:29:00,591 - INFO - Optimized query: ("Parkinson Disease/pathology"[MeSH] OR "Parkinson's disease"[Title/Abstract]) AND ("Neurons"[MeSH] OR "primary neurons"[Title/Abstract]) AND (aggregate*[Title/Abstract] OR aggregation[Title/Abstract]) AND ("Time Factors"[MeSH] OR days[Title/Abstract])
+2025-04-24 12:29:00,591 - INFO - Constructed PubMed query: (("Parkinson Disease/pathology"[MeSH] OR "Parkinson's disease"[Title/Abstract]) AND ("Neurons"[MeSH] OR "primary neurons"[Title/Abstract]) AND (aggregate*[Title/Abstract] OR aggregation[Title/Abstract]) AND ("Time Factors"[MeSH] OR days[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-04-24 12:29:00,591 - INFO - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-04-24 12:29:00,591 - INFO - Trying JSON esearch -> XML efetch...
+2025-04-24 12:29:02,010 - INFO - Found 14 PMIDs via JSON esearch, fetching details...
+2025-04-24 12:29:04,151 - INFO - Primary search method successful - found 14 citations
+2025-04-24 12:29:04,152 - INFO - PubMed search completed in 3.56 seconds.
+2025-04-24 12:29:04,152 - INFO - Raw citations before sorting/filtering: 14
+2025-04-24 12:29:04,152 - INFO - Limited citations from 14 to 7 based on max_citations=7
+2025-04-24 12:29:04,152 - INFO - Potential genes identified in top citations: CSF, IKK2, NURR1
+2025-04-24 12:29:04,152 - INFO - Top citation 1: 'Investigating the Effect of an Anti-Inflammatory Drug in Determining NURR1 Expression and Thus Exploring the Progression of Parkinson's Disease.', PMID: 38466012, Year: 2024
+2025-04-24 12:29:04,152 - INFO - Top citation 2: 'Establishment of a staging model for Parkinson's disease in mice.', PMID: 37329535, Year: 2023
+2025-04-24 12:29:04,152 - INFO - Top citation 3: 'CSF-derived extracellular vesicles from patients with Parkinson's disease induce symptoms and pathology.', PMID: 35881523, Year: 2023
+2025-04-24 12:29:04,152 - INFO - Returning 7 citations
+2025-04-24 15:23:20,131 - INFO - TEST - Test log entry at 2025-04-24 15:23:20
+2025-04-24 15:23:20,133 - INFO - TEST - Writing to log file directly - should appear in logs/biomedical_qa.log
+
+2025-04-24 15:23:20 - DIRECT FILE WRITE - Test entry
+2025-04-24 15:24:00,697 - INFO - test_centralized - Centralized logging test at 2025-04-24 15:24:00
+2025-04-24 15:24:00,697 - INFO - test_centralized - Centralized logging test at 2025-04-24 15:24:00
+2025-04-24 15:24:00,697 - WARNING - test_centralized - This is a warning message
+2025-04-24 15:24:00,697 - WARNING - test_centralized - This is a warning message
+2025-04-24 15:24:00,697 - ERROR - test_centralized - This is an error message
+2025-04-24 15:24:00,697 - ERROR - test_centralized - This is an error message
+2025-04-24 15:25:24,688 - INFO - src.utils - Configuration loaded from src/config.json
+2025-04-24 15:25:24,689 - INFO - src.citations - Proxy disabled in config - removing HTTP_PROXY from environment
+2025-04-24 15:25:24,689 - INFO - src.citations - Proxy disabled in config - removing HTTPS_PROXY from environment
+2025-04-24 15:25:24,689 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-04-24 15:25:24,690 - INFO - src.utils - Configuration loaded from config.json
+2025-04-24 15:25:24,690 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-04-24 15:25:24,690 - INFO - src.utils - Configuration loaded from config.json
+2025-04-24 15:25:24,690 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-04-24 15:25:24,690 - INFO - src.citations - Proxy not configured or disabled in config.json settings
+2025-04-24 15:25:24,690 - INFO - src.citations - NCBI API Key found in environment.
+2025-04-24 15:25:24,690 - INFO - src.citations - Initializing OpenAI client without proxy configuration
+2025-04-24 15:25:24,750 - INFO - src.citations - OpenAI client initialized for entity extraction.
+2025-04-24 15:25:24,751 - INFO - src.utils - .env file loaded successfully.
+2025-04-24 15:25:24,751 - INFO - src.utils - Configuration loaded from src/config.json
+2025-04-24 15:25:24,792 - INFO - src.qa_handler - OpenAI client initialized for fallback.
+2025-04-24 15:25:24,832 - INFO - src.qa_handler - OpenAI client initialized for fallback.
+2025-04-24 15:25:24,832 - INFO - __main__ - Bypassing model loading for direct fallback test
+2025-04-24 15:25:24,832 - INFO - src.qa_handler - Processing question: How many days will it take to aggregate parkinsons disease pathology in primary neurons?
+2025-04-24 15:25:24,832 - INFO - src.qa_handler - Detected query type: disease
+2025-04-24 15:25:24,832 - INFO - src.qa_handler - use_llm_parent is set to false, using direct OpenAI fallback
+2025-04-24 15:25:24,832 - INFO - src.qa_handler - Attempting fallback using OpenAI model: gpt-4o
+2025-04-24 15:25:25,934 - INFO - src.qa_handler - Received fallback answer from gpt-4o
+2025-04-24 15:25:25,934 - INFO - src.qa_handler - Using direct fallback: gpt-4o
+2025-04-24 15:25:25,934 - INFO - src.qa_handler - Fetching citations for question: 'How many days will it take to aggregate parkinsons disease pathology in primary neurons?'
+2025-04-24 15:25:25,934 - INFO - src.utils - Configuration loaded from config.json
+2025-04-24 15:25:25,934 - INFO - src.citations - Searching PubMed for user query: 'How many days will it take to aggregate parkinsons disease pathology in primary neurons?' (called from src.qa_handler)
+2025-04-24 15:25:25,934 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-04-24 15:25:25,934 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-04-24 15:25:25,934 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-04-24 15:25:25,934 - INFO - src.citations - Entity extraction method: LLM-based
+2025-04-24 15:25:25,934 - INFO - src.citations - Extracting entities using OpenAI API
+2025-04-24 15:25:27,213 - INFO - src.citations - Extracted 4 entities using LLM: Diseases:1, Keywords:3
+2025-04-24 15:25:27,213 - INFO - src.citations - Extracted entities - Diseases: 1, Keywords: 3
+2025-04-24 15:25:28,799 - INFO - src.citations - Generated LLM-optimized PubMed query: ("Parkinson Disease/pathology"[MeSH] OR "Parkinson's disease"[Title/Abstract]) AND ("Neurons"[MeSH] OR "primary neurons"[Title/Abstract]) AND (aggregate*[Title/Abstract] OR aggregation[Title/Abstract]) AND ("Time Factors"[MeSH] OR "days"[Title/Abstract])
+2025-04-24 15:25:28,799 - INFO - src.citations - Optimized query: ("Parkinson Disease/pathology"[MeSH] OR "Parkinson's disease"[Title/Abstract]) AND ("Neurons"[MeSH] OR "primary neurons"[Title/Abstract]) AND (aggregate*[Title/Abstract] OR aggregation[Title/Abstract]) AND ("Time Factors"[MeSH] OR "days"[Title/Abstract])
+2025-04-24 15:25:28,799 - INFO - src.citations - Constructed PubMed query: (("Parkinson Disease/pathology"[MeSH] OR "Parkinson's disease"[Title/Abstract]) AND ("Neurons"[MeSH] OR "primary neurons"[Title/Abstract]) AND (aggregate*[Title/Abstract] OR aggregation[Title/Abstract]) AND ("Time Factors"[MeSH] OR "days"[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-04-24 15:25:28,799 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-04-24 15:25:28,799 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-04-24 15:25:31,266 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...
+2025-04-24 15:25:41,026 - INFO - src.citations - Primary search method successful - found 14 citations
+2025-04-24 15:25:41,026 - INFO - src.citations - PubMed search completed in 12.23 seconds.
+2025-04-24 15:25:41,026 - INFO - src.citations - Raw citations before sorting/filtering: 14
+2025-04-24 15:25:41,026 - INFO - src.citations - Limited citations from 14 to 7 based on max_citations=7
+2025-04-24 15:25:41,027 - INFO - src.citations - Potential genes identified in top citations: CSF, IKK2, NURR1
+2025-04-24 15:25:41,027 - INFO - src.citations - Top citation 1: 'Investigating the Effect of an Anti-Inflammatory Drug in Determining NURR1 Expression and Thus Exploring the Progression of Parkinson's Disease.', PMID: 38466012, Year: 2024
+2025-04-24 15:25:41,027 - INFO - src.citations - Top citation 2: 'Establishment of a staging model for Parkinson's disease in mice.', PMID: 37329535, Year: 2023
+2025-04-24 15:25:41,027 - INFO - src.citations - Top citation 3: 'CSF-derived extracellular vesicles from patients with Parkinson's disease induce symptoms and pathology.', PMID: 35881523, Year: 2023
+2025-04-24 15:25:41,027 - INFO - src.citations - Returning 7 citations
+2025-04-24 15:25:41,028 - INFO - src.qa_handler - Fetched 7 citations
+2025-04-24 15:25:41,028 - INFO - src.utils - Configuration loaded from config.json
+2025-04-24 15:25:41,028 - INFO - src.qa_handler - Question processing completed in 16.20 seconds (Source: direct_fallback_gpt-4o)
