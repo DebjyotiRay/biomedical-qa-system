@@ -2,6 +2,7 @@
 openai>=1.0.0
 requests>=2.30.0
 python-dotenv>=1.0.0
+streamlit>=1.22.0
 
 # Data processing and visualization
 numpy>=1.22.0

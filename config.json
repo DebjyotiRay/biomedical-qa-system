@@ -1,8 +1,8 @@
 {
   "model": {
-    "base_model": "dmis-lab/biobert-large-cased-v1.1-squad",
+    "base_model": "microsoft/BioGPT",
     "max_length": 512,
-    "temperature": 0,
+    "temperature": 0.1,
     "top_p": 0.9,
     "device": "auto"
   },

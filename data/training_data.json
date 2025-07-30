@@ -1,0 +1,299 @@
+[
+    {
+      "question": "Which genes are commonly mutated in breast cancer?",
+      "answer": "• BRCA1\n• BRCA2\n• TP53\n• PIK3CA\n• PTEN\n• GATA3\n• CDH1",
+      "query_type": "gene"
+    },
+    {
+      "question": "What are key proteins in the PI3K/AKT signaling pathway?",
+      "answer": "• PI3K\n• AKT1\n• PTEN\n• mTOR\n• PDK1\n• TSC1\n• TSC2",
+      "query_type": "protein"
+    },
+    {
+      "question": "Which drugs target HER2-positive breast cancer?",
+      "answer": "• Trastuzumab\n• Pertuzumab\n• Lapatinib\n• Neratinib\n• Tucatinib",
+      "query_type": "drug"
+    },
+    {
+      "question": "What genes are implicated in Alzheimer's disease?",
+      "answer": "• APP\n• PSEN1\n• PSEN2\n• APOE\n• TREM2\n• ABCA7",
+      "query_type": "gene"
+    },
+    {
+      "question": "Which proteins regulate autophagy?",
+      "answer": "• BECN1\n• ATG5\n• ATG7\n• LC3\n• ULK1\n• mTOR",
+      "query_type": "protein"
+    },
+    {
+      "question": "What are the main genes involved in colorectal cancer?",
+      "answer": "• APC\n• KRAS\n• TP53\n• SMAD4\n• PIK3CA\n• BRAF",
+      "query_type": "gene"
+    },
+    {
+      "question": "Which drugs are EGFR inhibitors?",
+      "answer": "• Erlotinib\n• Gefitinib\n• Afatinib\n• Osimertinib\n• Dacomitinib",
+      "query_type": "drug"
+    },
+    {
+      "question": "What genes are associated with cystic fibrosis?",
+      "answer": "• CFTR",
+      "query_type": "gene"
+    },
+    {
+      "question": "Which proteins are involved in DNA repair?",
+      "answer": "• BRCA1\n• BRCA2\n• RAD51\n• ATM\n• ATR\n• MSH2\n• MLH1",
+      "query_type": "protein"
+    },
+    {
+      "question": "What genes are linked to Lynch syndrome?",
+      "answer": "• MLH1\n• MSH2\n• MSH6\n• PMS2\n• EPCAM",
+      "query_type": "gene"
+    },
+    {
+      "question": "What drugs inhibit VEGF signaling?",
+      "answer": "• Bevacizumab\n• Sorafenib\n• Sunitinib\n• Pazopanib\n• Axitinib",
+      "query_type": "drug"
+    },
+    {
+      "question": "Which proteins are components of the MAPK pathway?",
+      "answer": "• RAS\n• RAF\n• MEK1\n• MEK2\n• ERK1\n• ERK2",
+      "query_type": "protein"
+    },
+    {
+      "question": "What genes are associated with melanoma?",
+      "answer": "• BRAF\n• NRAS\n• KIT\n• CDKN2A\n• TP53",
+      "query_type": "gene"
+    },
+    {
+      "question": "Which drugs are used to treat chronic myeloid leukemia (CML)?",
+      "answer": "• Imatinib\n• Dasatinib\n• Nilotinib\n• Bosutinib\n• Ponatinib",
+      "query_type": "drug"
+    },
+    {
+      "question": "What genes are frequently mutated in pancreatic cancer?",
+      "answer": "• KRAS\n• TP53\n• CDKN2A\n• SMAD4",
+      "query_type": "gene"
+    },
+    {
+      "question": "Which proteins are involved in apoptosis?",
+      "answer": "• BAX\n• BCL2\n• CASP3\n• CASP9\n• APAF1\n• CYCS",
+      "query_type": "protein"
+    },
+    {
+      "question": "Which drugs inhibit the PD-1/PD-L1 immune checkpoint?",
+      "answer": "• Nivolumab\n• Pembrolizumab\n• Atezolizumab\n• Durvalumab\n• Cemiplimab",
+      "query_type": "drug"
+    },
+    {
+      "question": "What genes are involved in Fanconi anemia?",
+      "answer": "• FANCA\n• FANCC\n• FANCD2\n• BRCA2\n• FANCG",
+      "query_type": "gene"
+    },
+    {
+      "question": "What proteins are key regulators of the cell cycle?",
+      "answer": "• CDK1\n• CDK2\n• CDK4\n• CDK6\n• Cyclin D1\n• Cyclin E",
+      "query_type": "protein"
+    },
+    {
+      "question": "Which drugs target BRAF V600E mutations?",
+      "answer": "• Vemurafenib\n• Dabrafenib\n• Encorafenib",
+      "query_type": "drug"
+    },
+    
+        {
+          "question": "What genes are associated with type 2 diabetes?",
+          "answer": "• TCF7L2\n• PPARG\n• KCNJ11\n• SLC30A8\n• HHEX\n• FTO",
+          "query_type": "gene"
+        },
+        {
+          "question": "Which proteins are part of the TGF-beta signaling pathway?",
+          "answer": "• TGFBR1\n• TGFBR2\n• SMAD2\n• SMAD3\n• SMAD4\n• TGFB1",
+          "query_type": "protein"
+        },
+        {
+          "question": "What drugs are used to treat rheumatoid arthritis?",
+          "answer": "• Methotrexate\n• Sulfasalazine\n• Leflunomide\n• Etanercept\n• Adalimumab",
+          "query_type": "drug"
+        },
+        {
+          "question": "What genes are involved in hereditary breast and ovarian cancer?",
+          "answer": "• BRCA1\n• BRCA2\n• PALB2\n• RAD51C\n• RAD51D",
+          "query_type": "gene"
+        },
+        {
+          "question": "Which proteins are involved in the Wnt signaling pathway?",
+          "answer": "• WNT1\n• FZD1\n• LRP5\n• LRP6\n• β-Catenin\n• APC\n• GSK3B",
+          "query_type": "protein"
+        },
+        {
+          "question": "Which drugs target TNF-alpha?",
+          "answer": "• Infliximab\n• Etanercept\n• Adalimumab\n• Golimumab\n• Certolizumab pegol",
+          "query_type": "drug"
+        },
+        {
+          "question": "What genes are commonly mutated in glioblastoma?",
+          "answer": "• EGFR\n• PTEN\n• TP53\n• IDH1\n• NF1\n• ATRX",
+          "query_type": "gene"
+        },
+        {
+          "question": "Which proteins are part of the Notch signaling pathway?",
+          "answer": "• NOTCH1\n• NOTCH2\n• DLL1\n• JAG1\n• RBPJ",
+          "query_type": "protein"
+        },
+        {
+          "question": "What drugs inhibit mTOR?",
+          "answer": "• Rapamycin\n• Everolimus\n• Temsirolimus\n• Ridaforolimus",
+          "query_type": "drug"
+        },
+        {
+          "question": "Which genes are implicated in hypertrophic cardiomyopathy?",
+          "answer": "• MYH7\n• MYBPC3\n• TNNT2\n• TNNI3\n• TPM1",
+          "query_type": "gene"
+        },
+        {
+          "question": "What proteins are involved in insulin signaling?",
+          "answer": "• INSR\n• IRS1\n• IRS2\n• PI3K\n• AKT\n• GLUT4",
+          "query_type": "protein"
+        },
+        {
+          "question": "What drugs are commonly used in non-small cell lung cancer (NSCLC)?",
+          "answer": "• Gefitinib\n• Erlotinib\n• Osimertinib\n• Crizotinib\n• Atezolizumab",
+          "query_type": "drug"
+        },
+        {
+          "question": "Which genes are associated with amyotrophic lateral sclerosis (ALS)?",
+          "answer": "• SOD1\n• TARDBP\n• FUS\n• C9orf72\n• UBQLN2",
+          "query_type": "gene"
+        },
+        {
+          "question": "Which proteins regulate oxidative stress?",
+          "answer": "• SOD1\n• GPX1\n• CAT\n• NRF2\n• KEAP1",
+          "query_type": "protein"
+        },
+        {
+          "question": "What drugs are used to treat multiple sclerosis?",
+          "answer": "• Fingolimod\n• Dimethyl fumarate\n• Ocrelizumab\n• Natalizumab\n• Glatiramer acetate",
+          "query_type": "drug"
+        },
+        {
+          "question": "Which genes are linked to autism spectrum disorder?",
+          "answer": "• SHANK3\n• MECP2\n• NRXN1\n• SCN2A\n• CHD8",
+          "query_type": "gene"
+        },
+        {
+          "question": "What proteins mediate synaptic transmission?",
+          "answer": "• SNAP25\n• SYT1\n• VAMP2\n• STX1A\n• Synapsin I",
+          "query_type": "protein"
+        },
+        {
+          "question": "Which drugs act as serotonin reuptake inhibitors?",
+          "answer": "• Fluoxetine\n• Sertraline\n• Paroxetine\n• Citalopram\n• Escitalopram",
+          "query_type": "drug"
+        },
+        {
+          "question": "Which genes are commonly mutated in acute myeloid leukemia (AML)?",
+          "answer": "• FLT3\n• NPM1\n• DNMT3A\n• IDH1\n• RUNX1",
+          "query_type": "gene"
+        },
+        {
+          "question": "Which proteins are involved in chromatin remodeling?",
+          "answer": "• BRG1\n• BRM\n• CHD1\n• EZH2\n• SMARCA4",
+          "query_type": "protein"
+        },
+        {
+          "question": "What drugs are histone deacetylase inhibitors?",
+          "answer": "• Vorinostat\n• Romidepsin\n• Belinostat\n• Panobinostat",
+          "query_type": "drug"
+        },
+        {
+          "question": "Which genes are associated with ataxia-telangiectasia?",
+          "answer": "• ATM",
+          "query_type": "gene"
+        },
+        {
+          "question": "What proteins are involved in mitochondrial fission?",
+          "answer": "• DRP1\n• FIS1\n• MFF\n• MIEF1",
+          "query_type": "protein"
+        },
+        {
+          "question": "Which drugs are PARP inhibitors?",
+          "answer": "• Olaparib\n• Niraparib\n• Rucaparib\n• Talazoparib",
+          "query_type": "drug"
+        },
+        {
+          "question": "Which genes are involved in Wilson’s disease?",
+          "answer": "• ATP7B",
+          "query_type": "gene"
+        },
+        {
+          "question": "Which proteins are associated with the circadian clock?",
+          "answer": "• CLOCK\n• BMAL1\n• PER1\n• PER2\n• CRY1\n• CRY2",
+          "query_type": "protein"
+        },
+        {
+          "question": "What drugs are used to treat epilepsy?",
+          "answer": "• Valproate\n• Carbamazepine\n• Levetiracetam\n• Lamotrigine\n• Phenytoin",
+          "query_type": "drug"
+        },
+        {
+          "question": "Which genes are linked to Marfan syndrome?",
+          "answer": "• FBN1",
+          "query_type": "gene"
+        },
+        {
+          "question": "What proteins are involved in hemoglobin synthesis?",
+          "answer": "• HBB\n• HBA1\n• ALAS2\n• FECH",
+          "query_type": "protein"
+        },
+        {
+          "question": "Which drugs act as dopamine agonists?",
+          "answer": "• Pramipexole\n• Ropinirole\n• Bromocriptine\n• Apomorphine",
+          "query_type": "drug"
+        },
+        {
+          "question": "Which genes are associated with congenital adrenal hyperplasia?",
+          "answer": "• CYP21A2\n• CYP11B1\n• HSD3B2",
+          "query_type": "gene"
+        },
+        {
+          "question": "What proteins are part of the complement system?",
+          "answer": "• C1q\n• C3\n• C5\n• Factor B\n• Factor D",
+          "query_type": "protein"
+        },
+        {
+          "question": "What drugs inhibit interleukin-6 (IL-6) signaling?",
+          "answer": "• Tocilizumab\n• Sarilumab\n• Siltuximab",
+          "query_type": "drug"
+        },
+        {
+          "question": "Which genes are linked to long QT syndrome?",
+          "answer": "• KCNQ1\n• KCNH2\n• SCN5A\n• KCNE1\n• KCNE2",
+          "query_type": "gene"
+        },
+        {
+          "question": "What proteins regulate telomere length?",
+          "answer": "• TERT\n• TERC\n• DKC1\n• POT1\n• TRF1\n• TRF2",
+          "query_type": "protein"
+        },
+        {
+          "question": "Which drugs are used in prostate cancer therapy?",
+          "answer": "• Abiraterone\n• Enzalutamide\n• Bicalutamide\n• Leuprolide\n• Docetaxel",
+          "query_type": "drug"
+        },
+        {
+          "question": "Which genes are associated with Rett syndrome?",
+          "answer": "• MECP2",
+          "query_type": "gene"
+        },
+        {
+          "question": "What proteins mediate angiogenesis?",
+          "answer": "• VEGFA\n• FGF2\n• ANGPT1\n• ANGPT2\n• PDGFB",
+          "query_type": "protein"
+        },
+        {
+          "question": "What drugs are used as anticoagulants?",
+          "answer": "• Warfarin\n• Heparin\n• Dabigatran\n• Apixaban\n• Rivaroxaban",
+          "query_type": "drug"
+        }
+      ]
+      

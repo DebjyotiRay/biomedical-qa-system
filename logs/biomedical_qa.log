@@ -810,3 +810,29 @@ If this is a private repository, make sure to pass a token having permission to 
 2025-04-24 15:25:41,028 - INFO - src.qa_handler - Fetched 7 citations
 2025-04-24 15:25:41,028 - INFO - src.utils - Configuration loaded from config.json
 2025-04-24 15:25:41,028 - INFO - src.qa_handler - Question processing completed in 16.20 seconds (Source: direct_fallback_gpt-4o)
+2025-07-29 20:45:13,342 - INFO - src.citations - Proxy disabled in config - removing HTTP_PROXY from environment
+2025-07-29 20:45:13,342 - INFO - src.citations - Proxy disabled in config - removing HTTPS_PROXY from environment
+2025-07-29 20:45:13,697 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-29 20:45:13,697 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-29 20:45:13,698 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-29 20:45:13,698 - INFO - src.citations - Proxy not configured or disabled in config.json settings
+2025-07-29 20:45:13,698 - WARNING - src.citations - NCBI_API_KEY not found in environment. Using unauthenticated requests (rate limits apply).
+2025-07-29 20:45:13,698 - WARNING - src.citations - OPENAI_API_KEY not set. Enhanced entity extraction disabled.
+2025-07-29 20:47:06,671 - INFO - src.citations - Proxy disabled in config - removing HTTP_PROXY from environment
+2025-07-29 20:47:06,671 - INFO - src.citations - Proxy disabled in config - removing HTTPS_PROXY from environment
+2025-07-29 20:47:06,914 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-29 20:47:06,914 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-29 20:47:06,915 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-29 20:47:06,915 - INFO - src.citations - Proxy not configured or disabled in config.json settings
+2025-07-29 20:47:06,915 - INFO - src.citations - NCBI API Key found in environment.
+2025-07-29 20:47:06,915 - INFO - src.citations - Initializing OpenAI client without proxy configuration
+2025-07-29 20:47:06,978 - INFO - src.citations - OpenAI client initialized for entity extraction.
+2025-07-29 21:03:02,775 - INFO - src.citations - Proxy disabled in config - removing HTTP_PROXY from environment
+2025-07-29 21:03:02,776 - INFO - src.citations - Proxy disabled in config - removing HTTPS_PROXY from environment
+2025-07-29 21:03:03,158 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-29 21:03:03,159 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-29 21:03:03,160 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-29 21:03:03,160 - INFO - src.citations - Proxy not configured or disabled in config.json settings
+2025-07-29 21:03:03,160 - INFO - src.citations - NCBI API Key found in environment.
+2025-07-29 21:03:03,160 - INFO - src.citations - Initializing OpenAI client without proxy configuration
+2025-07-29 21:03:03,228 - INFO - src.citations - OpenAI client initialized for entity extraction.

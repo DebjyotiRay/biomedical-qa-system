@@ -51,17 +51,17 @@ class BiomedicalModel:
             return torch.device("cpu")
         elif device_pref == "cuda" and torch.cuda.is_available():
             return torch.device("cuda")
-        # elif device_pref == "mps" and torch.backends.mps.is_available():
-        #     return torch.device("mps") # MPS support can be experimental
+        elif device_pref == "mps" and torch.backends.mps.is_available():
+            return torch.device("mps")
 
         # Auto detection
         if torch.cuda.is_available():
             return torch.device("cuda")
-        # elif torch.backends.mps.is_available():
-        #      logger.warning("MPS available but support might be limited. Using MPS.")
-        #      return torch.device("mps")
+        elif torch.backends.mps.is_available():
+             logger.info("Using MPS (Metal Performance Shaders) for model inference.")
+             return torch.device("mps")
         else:
-            logger.warning("CUDA (and MPS) not available. Using CPU for model inference.")
+            logger.warning("CUDA and MPS not available. Using CPU for model inference.")
             return torch.device("cpu")
 
     def load_model(self) -> bool:
@@ -167,11 +167,13 @@ class BiomedicalModel:
             # --- Determine Target Modules ---
             # This part requires knowing the architecture. Inspect the model or check documentation.
             # Examples:
-            if "biogpt" in model_type:
-                 # BioGPT's structure might differ, common targets could be attention layers
-                 # Inspect self.model.named_modules() to find likely candidates
-                 # Example: target_modules = ["k_proj", "v_proj", "q_proj", "out_proj", "fc1", "fc2"] # Common in GPT-like
-                 target_modules = ["q_proj", "v_proj"] # Simplified common targets
+            if "biobert" in model_type or "bert" in model_type:
+                # BERT-like models use different naming conventions
+                target_modules = ["query", "value", "key", "dense"]
+                logger.info(f"Using target modules for BERT-like: {target_modules}")
+            elif "biogpt" in model_type:
+                 # BioGPT uses different naming conventions
+                 target_modules = ["k_proj", "v_proj", "q_proj", "out_proj"]
                  logger.info(f"Using target modules for BioGPT-like: {target_modules}")
             elif "llama" in model_type:
                 target_modules = ["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
@@ -183,9 +185,12 @@ class BiomedicalModel:
                 logger.warning(f"LoRA target modules not explicitly defined for {model_type}. Attempting common defaults.")
                 # Fallback - check common names
                 module_names = {name for name, _ in self.model.named_modules()}
-                if "q_proj" in module_names and "v_proj" in module_names: target_modules = ["q_proj", "v_proj"]
-                elif "query" in module_names and "value" in module_names: target_modules = ["query", "value"]
-                if not target_modules: logger.error("Could not determine default LoRA target modules. Training might fail.")
+                if "query" in module_names and "value" in module_names: 
+                    target_modules = ["query", "value"]
+                elif "q_proj" in module_names and "v_proj" in module_names: 
+                    target_modules = ["q_proj", "v_proj"]
+                if not target_modules: 
+                    logger.warning("Could not determine default LoRA target modules. Using PEFT defaults.")
 
 
             # Configure LoRA
@@ -217,16 +222,9 @@ class BiomedicalModel:
             return False
 
     def design_prompt(self, question: str, query_type: Optional[str] = None) -> str:
-        """ Design an optimized prompt for biomedical question answering """
-        if query_type is None:
-            query_type = determine_query_type(question)
-        type_specific = QUERY_TYPE_INSTRUCTIONS.get(query_type, QUERY_TYPE_INSTRUCTIONS["general"])
-        prompt = f"{INFERENCE_SYSTEM_PROMPT.strip()}\n\n"
-        prompt += f"{type_specific.strip()}\n\n"
-        prompt += f"Question: {question}\n\n"
-        if query_type in ['gene', 'protein', 'pathway', 'disease'] and FEW_SHOT_EXAMPLES:
-             prompt += f"{FEW_SHOT_EXAMPLES.strip()}\n\n"
-        prompt += "Answer:"
+        """ Design a very simple, direct prompt """
+        # Extremely simple - just the question
+        prompt = f"Question: {question}\nAnswer:"
         return prompt
 
     def generate_answer(self, question: str, query_type: Optional[str] = None) -> str:
@@ -257,15 +255,15 @@ class BiomedicalModel:
             if not active_model: raise RuntimeError("No active model found.")
 
             gen_kwargs = {
-                "max_new_tokens": max_new_tokens,
-                "temperature": self.model_config.get("temperature", 0.1),
-                "top_p": self.model_config.get("top_p", 0.9),
+                "max_new_tokens": 50,   # Much shorter responses
+                "temperature": 0.1,     # Low temperature for more deterministic output
+                "top_p": 0.9,
                 "do_sample": True,
+                "repetition_penalty": 1.3,  # Higher repetition penalty
+                "no_repeat_ngram_size": 2,   # Prevent 2-gram repetition
                 "pad_token_id": self.tokenizer.eos_token_id,
                 "eos_token_id": self.tokenizer.eos_token_id
             }
-            # Prevent temp=0 with do_sample=True
-            if gen_kwargs["temperature"] <= 0: gen_kwargs["temperature"] = 0.01
 
             logger.debug(f"Generating answer with kwargs: {gen_kwargs}")
 

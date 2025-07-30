@@ -1,0 +1,526 @@
+2025-07-29 19:33:26,027 - INFO - Starting biomedical QA model training...
+2025-07-29 19:33:26,028 - INFO - .env file loaded successfully.
+2025-07-29 19:33:26,028 - INFO - Configuration loaded from config.json
+2025-07-29 19:33:26,028 - INFO - Initializing model...
+2025-07-29 19:33:26,028 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 19:33:26,028 - INFO - Loading model: dmis-lab/biobert-large-cased-v1.1-squad
+2025-07-29 19:33:30,517 - INFO - Model 'dmis-lab/biobert-large-cased-v1.1-squad' loaded successfully on cpu
+2025-07-29 19:33:30,517 - INFO - Applying LoRA for parameter-efficient fine-tuning
+2025-07-29 19:33:30,517 - WARNING - LoRA target modules not explicitly defined for dmis-lab/biobert-large-cased-v1.1-squad. Attempting common defaults.
+2025-07-29 19:33:30,518 - ERROR - Could not determine default LoRA target modules. Training might fail.
+2025-07-29 19:33:30,569 - INFO - Loaded 59 training examples from data/training_data.json
+2025-07-29 19:33:30,569 - INFO - Split data: 47 train, 12 validation
+2025-07-29 19:33:30,570 - INFO - Created dataset with 47 examples
+2025-07-29 19:33:30,570 - INFO - Created dataset with 12 examples
+2025-07-29 19:37:33,056 - INFO - Starting biomedical QA model training...
+2025-07-29 19:37:33,057 - INFO - .env file loaded successfully.
+2025-07-29 19:37:33,057 - INFO - Configuration loaded from config.json
+2025-07-29 19:37:33,057 - INFO - Initializing model...
+2025-07-29 19:37:33,057 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 19:37:33,057 - INFO - Loading model: dmis-lab/biobert-large-cased-v1.1-squad
+2025-07-29 19:37:36,578 - INFO - Model 'dmis-lab/biobert-large-cased-v1.1-squad' loaded successfully on cpu
+2025-07-29 19:37:36,578 - INFO - Applying LoRA for parameter-efficient fine-tuning
+2025-07-29 19:37:36,578 - INFO - Using target modules for BERT-like: ['query', 'value', 'key', 'dense']
+2025-07-29 19:37:36,762 - INFO - Loaded 59 training examples from data/training_data.json
+2025-07-29 19:37:36,762 - INFO - Split data: 47 train, 12 validation
+2025-07-29 19:37:36,762 - INFO - Created dataset with 47 examples
+2025-07-29 19:37:36,762 - INFO - Created dataset with 12 examples
+2025-07-29 19:37:38,224 - INFO - Model training parameters:
+2025-07-29 19:37:38,226 - INFO - Starting training...
+2025-07-29 19:39:10,189 - ERROR - Training failed: Run initialization has timed out after 90.0 sec. Please try increasing the timeout with the `init_timeout` setting: `wandb.init(settings=wandb.Settings(init_timeout=120))`.
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/asyncio/locks.py", line 212, in wait
+    await fut
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/mailbox/response_handle.py", line 109, in wait_async
+    await asyncio.wait_for(evt.wait(), timeout=timeout)
+  File "/opt/anaconda3/lib/python3.12/asyncio/tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/asyncio/timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/wandb_init.py", line 1055, in init
+    result = wait_with_progress(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 24, in wait_with_progress
+    return wait_all_with_progress(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 87, in wait_all_with_progress
+    return asyncio_compat.run(progress_loop_with_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_compat.py", line 30, in run
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/anaconda3/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_compat.py", line 74, in run
+    return asyncio.run(self._run_or_cancel(fn))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_compat.py", line 98, in _run_or_cancel
+    return fn_task.result()
+           ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 82, in progress_loop_with_timeout
+    return await _wait_handles_async(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 130, in _wait_handles_async
+    async with asyncio_compat.open_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_compat.py", line 190, in open_task_group
+    await task_group._wait_all()
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_compat.py", line 159, in _wait_all
+    raise exc
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 128, in wait_single
+    results[index] = await handle.wait_async(timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/mailbox/mailbox_handle.py", line 126, in wait_async
+    response = await self._handle.wait_async(timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/mailbox/response_handle.py", line 118, in wait_async
+    raise TimeoutError(
+TimeoutError: Timed out waiting for response on m8pywntiv6no
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/debjyotiray/projects/tbep-chat/train.py", line 186, in main
+    trainer.train()
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2245, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2469, in _inner_training_loop
+    self.control = self.callback_handler.on_train_begin(args, self.state, self.control)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/trainer_callback.py", line 506, in on_train_begin
+    return self.call_event("on_train_begin", args, state, control)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/trainer_callback.py", line 556, in call_event
+    result = getattr(callback, event)(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/integrations/integration_utils.py", line 930, in on_train_begin
+    self.setup(args, state, model, **kwargs)
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/integrations/integration_utils.py", line 857, in setup
+    self._wandb.init(
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/wandb_init.py", line 1691, in init
+    wandb._sentry.reraise(e)
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/analytics/sentry.py", line 156, in reraise
+    raise exc.with_traceback(sys.exc_info()[2])
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/wandb_init.py", line 1677, in init
+    return wi.init(run_settings, run_config, run_printer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wandb/sdk/wandb_init.py", line 1068, in init
+    raise CommError(
+wandb.errors.errors.CommError: Run initialization has timed out after 90.0 sec. Please try increasing the timeout with the `init_timeout` setting: `wandb.init(settings=wandb.Settings(init_timeout=120))`.
+2025-07-29 19:39:10,197 - ERROR - Training process failed!
+2025-07-29 20:42:57,355 - INFO - Starting biomedical QA model training...
+2025-07-29 20:42:57,355 - INFO - .env file loaded successfully.
+2025-07-29 20:42:57,356 - INFO - Configuration loaded from config.json
+2025-07-29 20:42:57,356 - INFO - Initializing model...
+2025-07-29 20:42:57,356 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 20:42:57,356 - INFO - Loading model: dmis-lab/biobert-large-cased-v1.1-squad
+2025-07-29 20:43:00,414 - INFO - Model 'dmis-lab/biobert-large-cased-v1.1-squad' loaded successfully on cpu
+2025-07-29 20:43:00,414 - INFO - Applying LoRA for parameter-efficient fine-tuning
+2025-07-29 20:43:00,414 - INFO - Using target modules for BERT-like: ['query', 'value', 'key', 'dense']
+2025-07-29 20:43:00,599 - INFO - Loaded 59 training examples from data/training_data.json
+2025-07-29 20:43:00,599 - INFO - Split data: 47 train, 12 validation
+2025-07-29 20:43:00,599 - INFO - Created dataset with 47 examples
+2025-07-29 20:43:00,599 - INFO - Created dataset with 12 examples
+2025-07-29 20:43:01,346 - INFO - Model training parameters:
+2025-07-29 20:43:01,348 - INFO - Starting training...
+2025-07-29 20:44:50,508 - INFO - Training completed successfully!
+2025-07-29 20:44:50,509 - INFO - Saving PEFT adapter to output/peft_adapter
+2025-07-29 20:44:51,415 - INFO - PEFT adapter and tokenizer saved to output/peft_adapter
+2025-07-29 20:44:51,415 - INFO - Training metrics saved to output/peft_adapter/training_metrics.json
+2025-07-29 20:44:51,428 - INFO - Training process completed successfully!
+2025-07-29 20:45:09,851 - INFO - .env file loaded successfully.
+2025-07-29 20:45:09,851 - INFO - Configuration loaded from config.json
+2025-07-29 20:45:09,851 - INFO - Loading model...
+2025-07-29 20:45:09,851 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 20:45:09,851 - INFO - Loading model: dmis-lab/biobert-large-cased-v1.1-squad
+2025-07-29 20:45:13,020 - INFO - Model 'dmis-lab/biobert-large-cased-v1.1-squad' loaded successfully on cpu
+2025-07-29 20:45:13,020 - INFO - Loading PEFT adapter from output/peft_adapter
+2025-07-29 20:45:13,284 - INFO - PEFT adapter loaded successfully for inference
+2025-07-29 20:45:13,284 - INFO - Fine-tuned adapter loaded successfully!
+2025-07-29 20:45:13,342 - INFO - Configuration loaded from src/config.json
+2025-07-29 20:45:13,342 - INFO - Proxy disabled in config - removing HTTP_PROXY from environment
+2025-07-29 20:45:13,342 - INFO - Proxy disabled in config - removing HTTPS_PROXY from environment
+2025-07-29 20:45:13,697 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-07-29 20:45:13,697 - INFO - Configuration loaded from config.json
+2025-07-29 20:45:13,697 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-07-29 20:45:13,698 - INFO - Configuration loaded from config.json
+2025-07-29 20:45:13,698 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-07-29 20:45:13,698 - INFO - Proxy not configured or disabled in config.json settings
+2025-07-29 20:45:13,698 - WARNING - NCBI_API_KEY not found in environment. Using unauthenticated requests (rate limits apply).
+2025-07-29 20:45:13,698 - WARNING - OPENAI_API_KEY not set. Enhanced entity extraction disabled.
+2025-07-29 20:47:03,715 - INFO - .env file loaded successfully.
+2025-07-29 20:47:03,715 - INFO - Configuration loaded from config.json
+2025-07-29 20:47:03,715 - INFO - Loading model...
+2025-07-29 20:47:03,715 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 20:47:03,715 - INFO - Loading model: dmis-lab/biobert-large-cased-v1.1-squad
+2025-07-29 20:47:06,436 - INFO - Model 'dmis-lab/biobert-large-cased-v1.1-squad' loaded successfully on cpu
+2025-07-29 20:47:06,436 - INFO - Loading PEFT adapter from output/peft_adapter
+2025-07-29 20:47:06,641 - INFO - PEFT adapter loaded successfully for inference
+2025-07-29 20:47:06,641 - INFO - Fine-tuned adapter loaded successfully!
+2025-07-29 20:47:06,671 - INFO - Configuration loaded from src/config.json
+2025-07-29 20:47:06,671 - INFO - Proxy disabled in config - removing HTTP_PROXY from environment
+2025-07-29 20:47:06,671 - INFO - Proxy disabled in config - removing HTTPS_PROXY from environment
+2025-07-29 20:47:06,914 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-07-29 20:47:06,914 - INFO - Configuration loaded from config.json
+2025-07-29 20:47:06,914 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-07-29 20:47:06,915 - INFO - Configuration loaded from config.json
+2025-07-29 20:47:06,915 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-07-29 20:47:06,915 - INFO - Proxy not configured or disabled in config.json settings
+2025-07-29 20:47:06,915 - INFO - NCBI API Key found in environment.
+2025-07-29 20:47:06,915 - INFO - Initializing OpenAI client without proxy configuration
+2025-07-29 20:47:06,978 - INFO - OpenAI client initialized for entity extraction.
+2025-07-29 20:51:02,319 - INFO - Starting biomedical QA model training...
+2025-07-29 20:51:02,319 - INFO - .env file loaded successfully.
+2025-07-29 20:51:02,319 - INFO - Configuration loaded from config.json
+2025-07-29 20:51:02,319 - INFO - Initializing model...
+2025-07-29 20:51:02,319 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 20:51:02,319 - INFO - Loading model: microsoft/BioGPT-Large
+2025-07-29 20:51:03,128 - ERROR - Error loading model 'microsoft/BioGPT-Large': You need to install sacremoses to use BioGptTokenizer. See https://pypi.org/project/sacremoses/ for installation.
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/models/biogpt/tokenization_biogpt.py", line 104, in __init__
+    import sacremoses
+ModuleNotFoundError: No module named 'sacremoses'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/debjyotiray/projects/tbep-chat/src/model.py", line 74, in load_model
+    self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/models/auto/tokenization_auto.py", line 1009, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2062, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2302, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/models/biogpt/tokenization_biogpt.py", line 106, in __init__
+    raise ImportError(
+ImportError: You need to install sacremoses to use BioGptTokenizer. See https://pypi.org/project/sacremoses/ for installation.
+2025-07-29 20:51:03,136 - ERROR - Failed to load base model
+2025-07-29 20:51:03,136 - ERROR - Training process failed!
+2025-07-29 20:51:16,677 - INFO - Starting biomedical QA model training...
+2025-07-29 20:51:16,678 - INFO - .env file loaded successfully.
+2025-07-29 20:51:16,678 - INFO - Configuration loaded from config.json
+2025-07-29 20:51:16,678 - INFO - Initializing model...
+2025-07-29 20:51:16,678 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 20:51:16,678 - INFO - Loading model: microsoft/BioGPT-Large
+2025-07-29 20:51:17,143 - ERROR - Error loading model 'microsoft/BioGPT-Large': You need to install sacremoses to use BioGptTokenizer. See https://pypi.org/project/sacremoses/ for installation.
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/models/biogpt/tokenization_biogpt.py", line 104, in __init__
+    import sacremoses
+ModuleNotFoundError: No module named 'sacremoses'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/debjyotiray/projects/tbep-chat/src/model.py", line 74, in load_model
+    self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/models/auto/tokenization_auto.py", line 1009, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2062, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2302, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/models/biogpt/tokenization_biogpt.py", line 106, in __init__
+    raise ImportError(
+ImportError: You need to install sacremoses to use BioGptTokenizer. See https://pypi.org/project/sacremoses/ for installation.
+2025-07-29 20:51:17,148 - ERROR - Failed to load base model
+2025-07-29 20:51:17,148 - ERROR - Training process failed!
+2025-07-29 20:51:49,116 - INFO - Starting biomedical QA model training...
+2025-07-29 20:51:49,116 - INFO - .env file loaded successfully.
+2025-07-29 20:51:49,116 - INFO - Configuration loaded from config.json
+2025-07-29 20:51:49,116 - INFO - Initializing model...
+2025-07-29 20:51:49,116 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 20:51:49,116 - INFO - Loading model: microsoft/BioGPT-Large
+2025-07-29 20:51:52,905 - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-07-29 20:51:53,728 - INFO - Model 'microsoft/BioGPT-Large' loaded successfully on cpu
+2025-07-29 20:51:53,728 - INFO - Applying LoRA for parameter-efficient fine-tuning
+2025-07-29 20:51:53,728 - INFO - Using target modules for BioGPT-like: ['k_proj', 'v_proj', 'q_proj', 'out_proj']
+2025-07-29 20:51:53,924 - INFO - Loaded 59 training examples from data/training_data.json
+2025-07-29 20:51:53,924 - INFO - Split data: 47 train, 12 validation
+2025-07-29 20:51:53,924 - INFO - Created dataset with 47 examples
+2025-07-29 20:51:53,924 - INFO - Created dataset with 12 examples
+2025-07-29 20:52:07,036 - INFO - Model training parameters:
+2025-07-29 20:52:07,054 - INFO - Starting training...
+2025-07-29 20:52:19,492 - ERROR - Training failed: MPS backend out of memory (MPS allocated: 18.09 GB, other allocations: 58.78 MB, max allowed: 18.13 GB). Tried to allocate 6.25 MB on private pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).
+Traceback (most recent call last):
+  File "/Users/debjyotiray/projects/tbep-chat/train.py", line 186, in main
+    trainer.train()
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2245, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2560, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/trainer.py", line 3736, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/trainer.py", line 3801, in compute_loss
+    outputs = model(**inputs)
+              ^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/peft/peft_model.py", line 1756, in forward
+    return self.base_model(
+           ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 193, in forward
+    return self.model.forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/models/biogpt/modeling_biogpt.py", line 771, in forward
+    outputs = self.biogpt(
+              ^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/models/biogpt/modeling_biogpt.py", line 682, in forward
+    layer_outputs = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/models/biogpt/modeling_biogpt.py", line 434, in forward
+    hidden_states = residual + hidden_states
+                    ~~~~~~~~~^~~~~~~~~~~~~~~
+RuntimeError: MPS backend out of memory (MPS allocated: 18.09 GB, other allocations: 58.78 MB, max allowed: 18.13 GB). Tried to allocate 6.25 MB on private pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).
+2025-07-29 20:52:23,944 - ERROR - Training process failed!
+2025-07-29 20:57:19,276 - INFO - Starting biomedical QA model training...
+2025-07-29 20:57:19,276 - INFO - .env file loaded successfully.
+2025-07-29 20:57:19,277 - INFO - Configuration loaded from config.json
+2025-07-29 20:57:19,277 - INFO - Initializing model...
+2025-07-29 20:57:19,277 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 20:57:19,277 - INFO - Loading model: microsoft/BioGPT
+2025-07-29 20:57:32,347 - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-07-29 21:01:10,561 - INFO - Model 'microsoft/BioGPT' loaded successfully on cpu
+2025-07-29 21:01:10,561 - INFO - Applying LoRA for parameter-efficient fine-tuning
+2025-07-29 21:01:10,562 - INFO - Using target modules for BioGPT-like: ['k_proj', 'v_proj', 'q_proj', 'out_proj']
+2025-07-29 21:01:10,783 - INFO - Loaded 59 training examples from data/training_data.json
+2025-07-29 21:01:10,783 - INFO - Split data: 47 train, 12 validation
+2025-07-29 21:01:10,783 - INFO - Created dataset with 47 examples
+2025-07-29 21:01:10,783 - INFO - Created dataset with 12 examples
+2025-07-29 21:01:11,720 - INFO - Model training parameters:
+2025-07-29 21:01:11,721 - INFO - Starting training...
+2025-07-29 21:02:43,156 - INFO - Training completed successfully!
+2025-07-29 21:02:43,156 - INFO - Saving PEFT adapter to output/peft_adapter
+2025-07-29 21:02:44,725 - INFO - PEFT adapter and tokenizer saved to output/peft_adapter
+2025-07-29 21:02:44,725 - INFO - Training metrics saved to output/peft_adapter/training_metrics.json
+2025-07-29 21:02:44,731 - INFO - Training process completed successfully!
+2025-07-29 21:02:57,641 - INFO - .env file loaded successfully.
+2025-07-29 21:02:57,641 - INFO - Configuration loaded from config.json
+2025-07-29 21:02:57,641 - INFO - Loading model...
+2025-07-29 21:02:57,641 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 21:02:57,641 - INFO - Loading model: microsoft/BioGPT
+2025-07-29 21:03:02,551 - INFO - Model 'microsoft/BioGPT' loaded successfully on cpu
+2025-07-29 21:03:02,552 - INFO - Loading PEFT adapter from output/peft_adapter
+2025-07-29 21:03:02,712 - INFO - PEFT adapter loaded successfully for inference
+2025-07-29 21:03:02,712 - INFO - Fine-tuned adapter loaded successfully!
+2025-07-29 21:03:02,774 - INFO - Configuration loaded from src/config.json
+2025-07-29 21:03:02,775 - INFO - Proxy disabled in config - removing HTTP_PROXY from environment
+2025-07-29 21:03:02,776 - INFO - Proxy disabled in config - removing HTTPS_PROXY from environment
+2025-07-29 21:03:03,158 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-07-29 21:03:03,159 - INFO - Configuration loaded from config.json
+2025-07-29 21:03:03,159 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-07-29 21:03:03,160 - INFO - Configuration loaded from config.json
+2025-07-29 21:03:03,160 - INFO - OpenAI library loaded for enhanced entity extraction
+2025-07-29 21:03:03,160 - INFO - Proxy not configured or disabled in config.json settings
+2025-07-29 21:03:03,160 - INFO - NCBI API Key found in environment.
+2025-07-29 21:03:03,160 - INFO - Initializing OpenAI client without proxy configuration
+2025-07-29 21:03:03,228 - INFO - OpenAI client initialized for entity extraction.
+2025-07-29 21:05:06,884 - INFO - .env file loaded successfully.
+2025-07-29 21:05:06,884 - INFO - Configuration loaded from config.json
+2025-07-29 21:05:06,884 - INFO - Loading model...
+2025-07-29 21:05:06,884 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 21:05:06,884 - INFO - Loading model: microsoft/BioGPT
+2025-07-29 21:05:12,220 - INFO - Model 'microsoft/BioGPT' loaded successfully on cpu
+2025-07-29 21:05:12,221 - INFO - Loading PEFT adapter from output/peft_adapter
+2025-07-29 21:05:12,395 - INFO - PEFT adapter loaded successfully for inference
+2025-07-29 21:05:12,395 - INFO - Fine-tuned adapter loaded successfully!
+2025-07-29 21:05:52,665 - INFO - Starting biomedical QA model training...
+2025-07-29 21:05:52,665 - INFO - .env file loaded successfully.
+2025-07-29 21:05:52,665 - INFO - Configuration loaded from config.json
+2025-07-29 21:05:52,665 - INFO - Initializing model...
+2025-07-29 21:05:52,665 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 21:05:52,665 - INFO - Loading model: microsoft/BioGPT
+2025-07-29 21:05:58,908 - INFO - Model 'microsoft/BioGPT' loaded successfully on cpu
+2025-07-29 21:05:58,910 - INFO - Applying LoRA for parameter-efficient fine-tuning
+2025-07-29 21:05:58,910 - INFO - Using target modules for BioGPT-like: ['k_proj', 'v_proj', 'q_proj', 'out_proj']
+2025-07-29 21:05:58,967 - INFO - Loaded 59 training examples from data/training_data.json
+2025-07-29 21:05:58,967 - INFO - Split data: 47 train, 12 validation
+2025-07-29 21:05:58,967 - INFO - Created dataset with 47 examples
+2025-07-29 21:05:58,967 - INFO - Created dataset with 12 examples
+2025-07-29 21:05:59,880 - INFO - Model training parameters:
+2025-07-29 21:05:59,881 - INFO - Starting training...
+2025-07-29 21:07:28,317 - INFO - Training completed successfully!
+2025-07-29 21:07:28,319 - INFO - Saving PEFT adapter to output/peft_adapter
+2025-07-29 21:07:29,720 - INFO - PEFT adapter and tokenizer saved to output/peft_adapter
+2025-07-29 21:07:29,721 - INFO - Training metrics saved to output/peft_adapter/training_metrics.json
+2025-07-29 21:07:29,725 - INFO - Training process completed successfully!
+2025-07-29 21:07:41,080 - INFO - .env file loaded successfully.
+2025-07-29 21:07:41,080 - INFO - Configuration loaded from config.json
+2025-07-29 21:07:41,081 - INFO - Loading model...
+2025-07-29 21:07:41,081 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 21:07:41,081 - INFO - Loading model: microsoft/BioGPT
+2025-07-29 21:07:45,926 - INFO - Model 'microsoft/BioGPT' loaded successfully on cpu
+2025-07-29 21:07:45,927 - INFO - Loading PEFT adapter from output/peft_adapter
+2025-07-29 21:07:46,101 - INFO - PEFT adapter loaded successfully for inference
+2025-07-29 21:07:46,101 - INFO - Fine-tuned adapter loaded successfully!
+2025-07-29 21:11:44,349 - INFO - .env file loaded successfully.
+2025-07-29 21:11:44,350 - INFO - Configuration loaded from config.json
+2025-07-29 21:11:44,350 - INFO - Loading model...
+2025-07-29 21:11:44,350 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 21:11:44,350 - INFO - Loading model: microsoft/BioGPT
+2025-07-29 21:11:49,358 - INFO - Model 'microsoft/BioGPT' loaded successfully on cpu
+2025-07-29 21:11:49,358 - INFO - Loading PEFT adapter from output/peft_adapter
+2025-07-29 21:11:49,521 - INFO - PEFT adapter loaded successfully for inference
+2025-07-29 21:11:49,521 - INFO - Fine-tuned adapter loaded successfully!
+2025-07-29 21:11:50,888 - WARNING - Model generated empty or invalid answer: '.' -> '.'
+2025-07-29 21:11:55,293 - WARNING - Model generated empty or invalid answer: '.' -> '.'
+2025-07-29 21:12:26,305 - INFO - Starting biomedical QA model training...
+2025-07-29 21:12:26,306 - INFO - .env file loaded successfully.
+2025-07-29 21:12:26,306 - INFO - Configuration loaded from config.json
+2025-07-29 21:12:26,306 - INFO - Initializing model...
+2025-07-29 21:12:26,306 - WARNING - CUDA (and MPS) not available. Using CPU for model inference.
+2025-07-29 21:12:26,306 - INFO - Loading model: microsoft/BioGPT
+2025-07-29 21:12:32,255 - INFO - Model 'microsoft/BioGPT' loaded successfully on cpu
+2025-07-29 21:12:32,256 - INFO - Applying LoRA for parameter-efficient fine-tuning
+2025-07-29 21:12:32,256 - INFO - Using target modules for BioGPT-like: ['k_proj', 'v_proj', 'q_proj', 'out_proj']
+2025-07-29 21:12:32,310 - INFO - Loaded 59 training examples from data/training_data.json
+2025-07-29 21:12:32,311 - INFO - Split data: 47 train, 12 validation
+2025-07-29 21:12:32,311 - INFO - Created dataset with 47 examples
+2025-07-29 21:12:32,311 - INFO - Created dataset with 12 examples
+2025-07-29 21:12:33,353 - INFO - Model training parameters:
+2025-07-29 21:12:33,354 - INFO - Starting training...
+2025-07-29 21:13:50,792 - INFO - Starting biomedical QA model training...
+2025-07-29 21:13:50,792 - INFO - .env file loaded successfully.
+2025-07-29 21:13:50,792 - INFO - Configuration loaded from config.json
+2025-07-29 21:13:50,792 - INFO - Initializing model...
+2025-07-29 21:13:50,811 - INFO - Using MPS (Metal Performance Shaders) for model inference.
+2025-07-29 21:13:50,811 - INFO - Loading model: microsoft/BioGPT
+2025-07-29 21:13:57,143 - INFO - Model 'microsoft/BioGPT' loaded successfully on mps
+2025-07-29 21:13:57,143 - INFO - Applying LoRA for parameter-efficient fine-tuning
+2025-07-29 21:13:57,143 - INFO - Using target modules for BioGPT-like: ['k_proj', 'v_proj', 'q_proj', 'out_proj']
+2025-07-29 21:13:57,218 - INFO - Loaded 59 training examples from data/training_data.json
+2025-07-29 21:13:57,218 - INFO - Split data: 47 train, 12 validation
+2025-07-29 21:13:57,218 - INFO - Created dataset with 47 examples
+2025-07-29 21:13:57,218 - INFO - Created dataset with 12 examples
+2025-07-29 21:13:57,226 - INFO - Model training parameters:
+2025-07-29 21:13:57,227 - INFO - Starting training...
+2025-07-29 21:15:23,363 - INFO - Training completed successfully!
+2025-07-29 21:15:23,364 - INFO - Saving PEFT adapter to output/peft_adapter
+2025-07-29 21:15:24,747 - INFO - PEFT adapter and tokenizer saved to output/peft_adapter
+2025-07-29 21:15:24,747 - INFO - Training metrics saved to output/peft_adapter/training_metrics.json
+2025-07-29 21:15:24,751 - INFO - Training process completed successfully!
+2025-07-29 21:15:37,368 - INFO - .env file loaded successfully.
+2025-07-29 21:15:37,368 - INFO - Configuration loaded from config.json
+2025-07-29 21:15:37,368 - INFO - Loading model...
+2025-07-29 21:15:37,385 - INFO - Using MPS (Metal Performance Shaders) for model inference.
+2025-07-29 21:15:37,386 - INFO - Loading model: microsoft/BioGPT
+2025-07-29 21:15:43,480 - INFO - Model 'microsoft/BioGPT' loaded successfully on mps
+2025-07-29 21:15:43,480 - INFO - Loading PEFT adapter from output/peft_adapter
+2025-07-29 21:15:43,595 - INFO - PEFT adapter loaded successfully for inference
+2025-07-29 21:15:43,595 - INFO - Fine-tuned adapter loaded successfully!
+2025-07-29 21:15:52,792 - WARNING - Model generated empty or invalid answer: '.' -> '.'
+2025-07-29 21:15:54,678 - WARNING - Model generated empty or invalid answer: '.' -> '.'
+2025-07-30 00:28:39,067 - INFO - Starting biomedical QA model training...
+2025-07-30 00:28:39,068 - INFO - .env file loaded successfully.
+2025-07-30 00:28:39,068 - INFO - Configuration loaded from config.json
+2025-07-30 00:28:39,068 - INFO - Initializing model...
+2025-07-30 00:28:39,086 - INFO - Using MPS (Metal Performance Shaders) for model inference.
+2025-07-30 00:28:39,086 - INFO - Loading model: microsoft/BioGPT
+2025-07-30 00:28:45,369 - INFO - Model 'microsoft/BioGPT' loaded successfully on mps
+2025-07-30 00:28:45,370 - INFO - Applying LoRA for parameter-efficient fine-tuning
+2025-07-30 00:28:45,370 - INFO - Using target modules for BioGPT-like: ['k_proj', 'v_proj', 'q_proj', 'out_proj']
+2025-07-30 00:28:45,632 - INFO - Loaded 59 training examples from data/training_data.json
+2025-07-30 00:28:45,632 - INFO - Split data: 47 train, 12 validation
+2025-07-30 00:28:45,633 - INFO - Created dataset with 47 examples
+2025-07-30 00:28:45,633 - INFO - Created dataset with 12 examples
+2025-07-30 00:28:45,643 - INFO - Model training parameters:
+2025-07-30 00:28:45,644 - INFO - Starting training...
+2025-07-30 00:30:16,852 - INFO - Training completed successfully!
+2025-07-30 00:30:16,853 - INFO - Saving PEFT adapter to output/peft_adapter
+2025-07-30 00:30:19,451 - INFO - PEFT adapter and tokenizer saved to output/peft_adapter
+2025-07-30 00:30:19,452 - INFO - Training metrics saved to output/peft_adapter/training_metrics.json
+2025-07-30 00:30:19,457 - INFO - Training process completed successfully!
+2025-07-30 00:30:31,206 - INFO - .env file loaded successfully.
+2025-07-30 00:30:31,206 - INFO - Configuration loaded from config.json
+2025-07-30 00:30:31,206 - INFO - Loading model...
+2025-07-30 00:30:31,223 - INFO - Using MPS (Metal Performance Shaders) for model inference.
+2025-07-30 00:30:31,223 - INFO - Loading model: microsoft/BioGPT
+2025-07-30 00:30:38,088 - INFO - Model 'microsoft/BioGPT' loaded successfully on mps
+2025-07-30 00:30:38,088 - INFO - Loading PEFT adapter from output/peft_adapter
+2025-07-30 00:30:38,207 - INFO - PEFT adapter loaded successfully for inference
+2025-07-30 00:30:38,207 - INFO - Fine-tuned adapter loaded successfully!
+2025-07-30 00:30:43,259 - WARNING - Model generated empty or invalid answer: '.' -> '.'
+2025-07-30 00:30:43,755 - WARNING - Model generated empty or invalid answer: '.' -> '.'
+2025-07-30 11:24:34,496 - INFO - .env file loaded successfully.
+2025-07-30 11:24:34,497 - INFO - Configuration loaded from config.json
+2025-07-30 11:24:34,497 - INFO - Loading model...
+2025-07-30 11:24:34,518 - INFO - Using MPS (Metal Performance Shaders) for model inference.
+2025-07-30 11:24:34,518 - INFO - Loading model: microsoft/BioGPT
+2025-07-30 11:24:40,476 - INFO - Model 'microsoft/BioGPT' loaded successfully on mps
+2025-07-30 11:24:40,477 - INFO - Loading PEFT adapter from output/peft_adapter
+2025-07-30 11:24:40,652 - INFO - PEFT adapter loaded successfully for inference
+2025-07-30 11:24:40,652 - INFO - Fine-tuned adapter loaded successfully!
+2025-07-30 11:38:00,480 - INFO - .env file loaded successfully.
+2025-07-30 11:38:00,480 - INFO - Configuration loaded from config.json
+2025-07-30 11:38:00,480 - INFO - Loading model...
+2025-07-30 11:38:00,496 - INFO - Using MPS (Metal Performance Shaders) for model inference.
+2025-07-30 11:38:00,496 - INFO - Loading model: microsoft/BioGPT
+2025-07-30 11:38:06,252 - INFO - Model 'microsoft/BioGPT' loaded successfully on mps
+2025-07-30 11:38:06,253 - INFO - Loading PEFT adapter from output/peft_adapter
+2025-07-30 11:38:06,387 - INFO - PEFT adapter loaded successfully for inference
+2025-07-30 11:38:06,387 - INFO - Fine-tuned adapter loaded successfully!
