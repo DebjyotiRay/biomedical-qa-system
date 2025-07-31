@@ -836,3 +836,457 @@ If this is a private repository, make sure to pass a token having permission to 
 2025-07-29 21:03:03,160 - INFO - src.citations - NCBI API Key found in environment.
 2025-07-29 21:03:03,160 - INFO - src.citations - Initializing OpenAI client without proxy configuration
 2025-07-29 21:03:03,228 - INFO - src.citations - OpenAI client initialized for entity extraction.
+2025-07-31 15:34:32,885 - INFO - src.citations - Proxy disabled in config - removing HTTP_PROXY from environment
+2025-07-31 15:34:32,885 - INFO - src.citations - Proxy disabled in config - removing HTTPS_PROXY from environment
+2025-07-31 15:34:32,885 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-31 15:34:32,886 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-31 15:34:32,886 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-31 15:34:32,886 - INFO - src.citations - Proxy not configured or disabled in config.json settings
+2025-07-31 15:34:32,886 - INFO - src.citations - NCBI API Key found in environment.
+2025-07-31 15:34:32,886 - INFO - src.citations - Initializing OpenAI client without proxy configuration
+2025-07-31 15:34:32,958 - INFO - src.citations - OpenAI client initialized for entity extraction.
+2025-07-31 15:34:33,013 - INFO - src.qa_handler - OpenAI client initialized for fallback.
+2025-07-31 15:34:39,132 - INFO - src.qa_handler - OpenAI client initialized for fallback.
+2025-07-31 15:34:39,135 - INFO - src.qa_handler - Processing question: What genes are associated with Parkinson's disease?
+2025-07-31 15:34:39,137 - INFO - src.qa_handler - Detected query type: gene
+2025-07-31 15:34:39,137 - INFO - src.qa_handler - use_llm_parent is set to false, using direct OpenAI fallback
+2025-07-31 15:34:39,137 - INFO - src.qa_handler - Attempting fallback using OpenAI model: gpt-4o
+2025-07-31 15:34:40,721 - INFO - src.qa_handler - Received fallback answer from gpt-4o
+2025-07-31 15:34:40,721 - INFO - src.qa_handler - Using direct fallback: gpt-4o
+2025-07-31 15:34:40,721 - INFO - src.qa_handler - Fetching citations for question: 'What genes are associated with Parkinson's disease?'
+2025-07-31 15:34:40,722 - INFO - src.citations - Searching PubMed for user query: 'What genes are associated with Parkinson's disease?' (called from src.qa_handler)
+2025-07-31 15:34:40,722 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-07-31 15:34:40,722 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-07-31 15:34:40,722 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-07-31 15:34:40,722 - INFO - src.citations - Entity extraction method: LLM-based
+2025-07-31 15:34:40,722 - INFO - src.citations - Extracting entities using OpenAI API
+2025-07-31 15:34:41,986 - INFO - src.citations - Extracted 1 entities using LLM: Diseases:1
+2025-07-31 15:34:41,986 - INFO - src.citations - Extracted entities - Diseases: 1
+2025-07-31 15:34:43,950 - INFO - src.citations - Generated LLM-optimized PubMed query: ("Parkinson Disease"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Predisposition to Disease"[MeSH Terms]) AND ("Genetics"[Subheading] OR "Genomics"[MeSH Terms] OR "Genome"[MeSH Terms])
+2025-07-31 15:34:43,950 - INFO - src.citations - Optimized query: ("Parkinson Disease"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Predisposition to Disease"[MeSH Terms]) AND ("Genetics"[Subheading] OR "Genomics"[MeSH Terms] OR "Genome"[MeSH Terms])
+2025-07-31 15:34:43,951 - INFO - src.citations - Constructed PubMed query: (("Parkinson Disease"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Predisposition to Disease"[MeSH Terms]) AND ("Genetics"[Subheading] OR "Genomics"[MeSH Terms] OR "Genome"[MeSH Terms])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-07-31 15:34:43,951 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-07-31 15:34:43,951 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-07-31 15:34:47,051 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...
+2025-07-31 15:34:49,150 - INFO - src.citations - Primary search method successful - found 14 citations
+2025-07-31 15:34:49,150 - INFO - src.citations - PubMed search completed in 5.20 seconds.
+2025-07-31 15:34:49,150 - INFO - src.citations - Raw citations before sorting/filtering: 14
+2025-07-31 15:34:49,151 - INFO - src.citations - Limited citations from 14 to 7 based on max_citations=7
+2025-07-31 15:34:49,151 - INFO - src.citations - Potential genes identified in top citations: CSF, DDC
+2025-07-31 15:34:49,151 - INFO - src.citations - Top citation 1: 'Parkinson's Disease is Predominantly a Genetic Disease.', PMID: 38552119, Year: 2024
+2025-07-31 15:34:49,151 - INFO - src.citations - Top citation 2: 'Uncovering the genetic basis of Parkinson's disease globally: from discoveries to the clinic.', PMID: 39447588, Year: 2024
+2025-07-31 15:34:49,151 - INFO - src.citations - Top citation 3: 'The Genetics of Parkinson's Disease and Implications for Clinical Practice.', PMID: 34208795, Year: 2021
+2025-07-31 15:34:49,151 - INFO - src.citations - Returning 7 citations
+2025-07-31 15:34:49,151 - INFO - src.qa_handler - Fetched 7 citations
+2025-07-31 15:34:49,151 - INFO - src.qa_handler - Question processing completed in 10.01 seconds (Source: direct_fallback_gpt-4o)
+2025-07-31 15:34:49,151 - INFO - src.qa_handler - Processing question: Which proteins are involved in DNA repair?
+2025-07-31 15:34:49,151 - INFO - src.qa_handler - Detected query type: protein
+2025-07-31 15:34:49,151 - INFO - src.qa_handler - use_llm_parent is set to false, using direct OpenAI fallback
+2025-07-31 15:34:49,151 - INFO - src.qa_handler - Attempting fallback using OpenAI model: gpt-4o
+2025-07-31 15:34:53,727 - INFO - src.qa_handler - Received fallback answer from gpt-4o
+2025-07-31 15:34:53,727 - INFO - src.qa_handler - Using direct fallback: gpt-4o
+2025-07-31 15:34:53,727 - INFO - src.qa_handler - Fetching citations for question: 'Which proteins are involved in DNA repair?'
+2025-07-31 15:34:53,728 - INFO - src.citations - Searching PubMed for user query: 'Which proteins are involved in DNA repair?' (called from src.qa_handler)
+2025-07-31 15:34:53,728 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-07-31 15:34:53,728 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-07-31 15:34:53,728 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-07-31 15:34:53,729 - INFO - src.citations - Entity extraction method: LLM-based
+2025-07-31 15:34:53,729 - INFO - src.citations - Extracting entities using OpenAI API
+2025-07-31 15:34:55,326 - INFO - src.citations - Extracted 1 entities using LLM: Pathways:1
+2025-07-31 15:34:55,327 - INFO - src.citations - Extracted entities - Pathways: 1
+2025-07-31 15:34:56,723 - INFO - src.citations - Generated LLM-optimized PubMed query: "DNA Repair"[MeSH Terms] AND ("Proteins"[MeSH Terms] OR protein*[Title/Abstract] OR "Protein"[Substance Name])
+2025-07-31 15:34:56,723 - INFO - src.citations - Optimized query: "DNA Repair"[MeSH Terms] AND ("Proteins"[MeSH Terms] OR protein*[Title/Abstract] OR "Protein"[Substance Name])
+2025-07-31 15:34:56,723 - INFO - src.citations - Constructed PubMed query: ("DNA Repair"[MeSH Terms] AND ("Proteins"[MeSH Terms] OR protein*[Title/Abstract] OR "Protein"[Substance Name])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-07-31 15:34:56,724 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-07-31 15:34:56,724 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-07-31 15:34:58,138 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...
+2025-07-31 15:35:00,811 - INFO - src.citations - Primary search method successful - found 14 citations
+2025-07-31 15:35:00,811 - INFO - src.citations - PubMed search completed in 4.09 seconds.
+2025-07-31 15:35:00,811 - INFO - src.citations - Raw citations before sorting/filtering: 14
+2025-07-31 15:35:00,812 - INFO - src.citations - Limited citations from 14 to 7 based on max_citations=7
+2025-07-31 15:35:00,812 - INFO - src.citations - Potential genes identified in top citations: MRE11
+2025-07-31 15:35:00,812 - INFO - src.citations - Top citation 1: 'Liquid‒liquid phase separation: roles and implications in future cancer treatment.', PMID: 37705755, Year: 2023
+2025-07-31 15:35:00,812 - INFO - src.citations - Top citation 2: 'DNA repair, recombination, and damage signaling.', PMID: 35137093, Year: 2022
+2025-07-31 15:35:00,812 - INFO - src.citations - Top citation 3: 'DNA End Resection: Mechanism and Control.', PMID: 34813349, Year: 2021
+2025-07-31 15:35:00,812 - INFO - src.citations - Returning 7 citations
+2025-07-31 15:35:00,812 - INFO - src.qa_handler - Fetched 7 citations
+2025-07-31 15:35:00,812 - INFO - src.qa_handler - Question processing completed in 11.66 seconds (Source: direct_fallback_gpt-4o)
+2025-07-31 15:35:00,812 - INFO - src.qa_handler - Processing question: What drugs target EGFR?
+2025-07-31 15:35:00,813 - INFO - src.qa_handler - Detected query type: gene
+2025-07-31 15:35:00,813 - INFO - src.qa_handler - use_llm_parent is set to false, using direct OpenAI fallback
+2025-07-31 15:35:00,813 - INFO - src.qa_handler - Attempting fallback using OpenAI model: gpt-4o
+2025-07-31 15:35:02,552 - INFO - src.qa_handler - Received fallback answer from gpt-4o
+2025-07-31 15:35:02,552 - INFO - src.qa_handler - Using direct fallback: gpt-4o
+2025-07-31 15:35:02,552 - INFO - src.qa_handler - Fetching citations for question: 'What drugs target EGFR?'
+2025-07-31 15:35:02,553 - INFO - src.citations - Searching PubMed for user query: 'What drugs target EGFR?' (called from src.qa_handler)
+2025-07-31 15:35:02,553 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-07-31 15:35:02,553 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-07-31 15:35:02,553 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-07-31 15:35:02,553 - INFO - src.citations - Entity extraction method: LLM-based
+2025-07-31 15:35:02,553 - INFO - src.citations - Extracting entities using OpenAI API
+2025-07-31 15:35:04,126 - INFO - src.citations - Extracted 2 entities using LLM: Genes:1, Keywords:1
+2025-07-31 15:35:04,127 - INFO - src.citations - Extracted entities - Genes: 1, Keywords: 1
+2025-07-31 15:35:05,805 - INFO - src.citations - Generated LLM-optimized PubMed query: ```(("EGFR"[Gene Name] OR "ErbB Receptors"[MeSH Terms]) AND ("Drugs"[Title/Abstract] OR "Pharmaceutical Preparations"[MeSH Terms] OR "Drug Therapy"[MeSH Terms]))```
+2025-07-31 15:35:05,805 - INFO - src.citations - Optimized query: ```(("EGFR"[Gene Name] OR "ErbB Receptors"[MeSH Terms]) AND ("Drugs"[Title/Abstract] OR "Pharmaceutical Preparations"[MeSH Terms] OR "Drug Therapy"[MeSH Terms]))```
+2025-07-31 15:35:05,805 - INFO - src.citations - Constructed PubMed query: (```(("EGFR"[Gene Name] OR "ErbB Receptors"[MeSH Terms]) AND ("Drugs"[Title/Abstract] OR "Pharmaceutical Preparations"[MeSH Terms] OR "Drug Therapy"[MeSH Terms]))```) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-07-31 15:35:05,806 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-07-31 15:35:05,806 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-07-31 15:35:07,117 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...
+2025-07-31 15:35:09,530 - INFO - src.citations - Primary search method successful - found 14 citations
+2025-07-31 15:35:09,531 - INFO - src.citations - PubMed search completed in 3.73 seconds.
+2025-07-31 15:35:09,531 - INFO - src.citations - Raw citations before sorting/filtering: 14
+2025-07-31 15:35:09,531 - INFO - src.citations - Limited citations from 14 to 7 based on max_citations=7
+2025-07-31 15:35:09,531 - INFO - src.citations - Potential genes identified in top citations: EGFR, ERBB, HER2
+2025-07-31 15:35:09,531 - INFO - src.citations - Top citation 1: 'Targeting the EGFR signalling pathway in metastatic colorectal cancer.', PMID: 38697174, Year: 2024
+2025-07-31 15:35:09,531 - INFO - src.citations - Top citation 2: 'Targeted Therapies for EGFR Exon 20 Insertion Mutation in Non-Small-Cell Lung Cancer.', PMID: 38892105, Year: 2024
+2025-07-31 15:35:09,531 - INFO - src.citations - Top citation 3: 'Non-small cell lung cancer: an update on emerging EGFR-targeted therapies.', PMID: 38572595, Year: 2024
+2025-07-31 15:35:09,531 - INFO - src.citations - Returning 7 citations
+2025-07-31 15:35:09,531 - INFO - src.qa_handler - Fetched 7 citations
+2025-07-31 15:35:09,532 - INFO - src.qa_handler - Question processing completed in 8.72 seconds (Source: direct_fallback_gpt-4o)
+2025-07-31 15:35:09,532 - INFO - src.qa_handler - Processing question: Which genes are mutated in breast cancer?
+2025-07-31 15:35:09,532 - INFO - src.qa_handler - Detected query type: gene
+2025-07-31 15:35:09,532 - INFO - src.qa_handler - use_llm_parent is set to false, using direct OpenAI fallback
+2025-07-31 15:35:09,532 - INFO - src.qa_handler - Attempting fallback using OpenAI model: gpt-4o
+2025-07-31 15:35:10,910 - INFO - src.qa_handler - Received fallback answer from gpt-4o
+2025-07-31 15:35:10,911 - INFO - src.qa_handler - Using direct fallback: gpt-4o
+2025-07-31 15:35:10,911 - INFO - src.qa_handler - Fetching citations for question: 'Which genes are mutated in breast cancer?'
+2025-07-31 15:35:10,911 - INFO - src.citations - Searching PubMed for user query: 'Which genes are mutated in breast cancer?' (called from src.qa_handler)
+2025-07-31 15:35:10,912 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-07-31 15:35:10,912 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-07-31 15:35:10,912 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-07-31 15:35:10,912 - INFO - src.citations - Entity extraction method: LLM-based
+2025-07-31 15:35:10,912 - INFO - src.citations - Extracting entities using OpenAI API
+2025-07-31 15:35:12,030 - INFO - src.citations - Extracted 1 entities using LLM: Diseases:1
+2025-07-31 15:35:12,031 - INFO - src.citations - Extracted entities - Diseases: 1
+2025-07-31 15:35:13,429 - INFO - src.citations - Generated LLM-optimized PubMed query: ("Breast Neoplasms/genetics"[MeSH] OR "breast cancer"[Title/Abstract]) AND ("Mutation"[MeSH Terms] OR mutation*[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract])
+2025-07-31 15:35:13,430 - INFO - src.citations - Optimized query: ("Breast Neoplasms/genetics"[MeSH] OR "breast cancer"[Title/Abstract]) AND ("Mutation"[MeSH Terms] OR mutation*[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract])
+2025-07-31 15:35:13,430 - INFO - src.citations - Constructed PubMed query: (("Breast Neoplasms/genetics"[MeSH] OR "breast cancer"[Title/Abstract]) AND ("Mutation"[MeSH Terms] OR mutation*[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-07-31 15:35:13,430 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-07-31 15:35:13,430 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-07-31 15:35:14,975 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...
+2025-07-31 15:35:17,058 - INFO - src.citations - Primary search method successful - found 14 citations
+2025-07-31 15:35:17,059 - INFO - src.citations - PubMed search completed in 3.63 seconds.
+2025-07-31 15:35:17,059 - INFO - src.citations - Raw citations before sorting/filtering: 14
+2025-07-31 15:35:17,059 - INFO - src.citations - Limited citations from 14 to 7 based on max_citations=7
+2025-07-31 15:35:17,059 - INFO - src.citations - Potential genes identified in top citations: BRCA, BRCA2
+2025-07-31 15:35:17,059 - INFO - src.citations - Top citation 1: 'Hereditary Breast Cancer: BRCA Mutations and Beyond.', PMID: 38777539, Year: 2024
+2025-07-31 15:35:17,059 - INFO - src.citations - Top citation 2: 'A comprehensive overview of metaplastic breast cancer: Features and treatments.', PMID: 38735837, Year: 2024
+2025-07-31 15:35:17,059 - INFO - src.citations - Top citation 3: 'Genetic Testing Enhances the Precision Diagnosis and Treatment of Breast Cancer.', PMID: 38068930, Year: 2023
+2025-07-31 15:35:17,059 - INFO - src.citations - Returning 7 citations
+2025-07-31 15:35:17,059 - INFO - src.qa_handler - Fetched 7 citations
+2025-07-31 15:35:17,059 - INFO - src.qa_handler - Question processing completed in 7.53 seconds (Source: direct_fallback_gpt-4o)
+2025-07-31 15:35:17,059 - INFO - src.qa_handler - Processing question: How many days will it take to aggregate parkinsons disease pathology in primary neurons?
+2025-07-31 15:35:17,059 - INFO - src.qa_handler - Detected query type: disease
+2025-07-31 15:35:17,059 - INFO - src.qa_handler - use_llm_parent is set to false, using direct OpenAI fallback
+2025-07-31 15:35:17,059 - INFO - src.qa_handler - Attempting fallback using OpenAI model: gpt-4o
+2025-07-31 15:35:18,193 - INFO - src.qa_handler - Received fallback answer from gpt-4o
+2025-07-31 15:35:18,194 - INFO - src.qa_handler - Using direct fallback: gpt-4o
+2025-07-31 15:35:18,194 - INFO - src.qa_handler - Fetching citations for question: 'How many days will it take to aggregate parkinsons disease pathology in primary neurons?'
+2025-07-31 15:35:18,194 - INFO - src.citations - Searching PubMed for user query: 'How many days will it take to aggregate parkinsons disease pathology in primary neurons?' (called from src.qa_handler)
+2025-07-31 15:35:18,194 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-07-31 15:35:18,194 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-07-31 15:35:18,194 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-07-31 15:35:18,195 - INFO - src.citations - Entity extraction method: LLM-based
+2025-07-31 15:35:18,195 - INFO - src.citations - Extracting entities using OpenAI API
+2025-07-31 15:35:19,319 - INFO - src.citations - Extracted 4 entities using LLM: Diseases:1, Keywords:3
+2025-07-31 15:35:19,320 - INFO - src.citations - Extracted entities - Diseases: 1, Keywords: 3
+2025-07-31 15:35:21,217 - INFO - src.citations - Generated LLM-optimized PubMed query: ("Parkinson Disease/pathology"[MeSH] OR "Parkinson's disease"[Title/Abstract]) AND ("Neurons"[MeSH] OR "primary neurons"[Title/Abstract]) AND (aggregate*[Title/Abstract] OR aggregation[Title/Abstract]) AND ("Time Factors"[MeSH] OR "days"[Title/Abstract])
+2025-07-31 15:35:21,218 - INFO - src.citations - Optimized query: ("Parkinson Disease/pathology"[MeSH] OR "Parkinson's disease"[Title/Abstract]) AND ("Neurons"[MeSH] OR "primary neurons"[Title/Abstract]) AND (aggregate*[Title/Abstract] OR aggregation[Title/Abstract]) AND ("Time Factors"[MeSH] OR "days"[Title/Abstract])
+2025-07-31 15:35:21,218 - INFO - src.citations - Constructed PubMed query: (("Parkinson Disease/pathology"[MeSH] OR "Parkinson's disease"[Title/Abstract]) AND ("Neurons"[MeSH] OR "primary neurons"[Title/Abstract]) AND (aggregate*[Title/Abstract] OR aggregation[Title/Abstract]) AND ("Time Factors"[MeSH] OR "days"[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-07-31 15:35:21,218 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-07-31 15:35:21,218 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-07-31 15:35:22,468 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...
+2025-07-31 15:35:24,632 - INFO - src.citations - Primary search method successful - found 14 citations
+2025-07-31 15:35:24,633 - INFO - src.citations - PubMed search completed in 3.41 seconds.
+2025-07-31 15:35:24,633 - INFO - src.citations - Raw citations before sorting/filtering: 14
+2025-07-31 15:35:24,633 - INFO - src.citations - Limited citations from 14 to 7 based on max_citations=7
+2025-07-31 15:35:24,633 - INFO - src.citations - Potential genes identified in top citations: CSF, I416T, NURR1, PF-06447475, PSEN1
+2025-07-31 15:35:24,633 - INFO - src.citations - Top citation 1: 'Neural-induced human adipose tissue-derived stem cell secretome exerts neuroprotection against rotenone-induced Parkinson's disease in rats.', PMID: 40254594, Year: 2025
+2025-07-31 15:35:24,633 - INFO - src.citations - Top citation 2: 'PF-06447475 Molecule Attenuates the Neuropathology of Familial Alzheimer's and Coexistent Parkinson's Disease Markers in PSEN1 I416T Dopaminergic-like Neurons.', PMID: 40363838, Year: 2025
+2025-07-31 15:35:24,633 - INFO - src.citations - Top citation 3: 'Investigating the Effect of an Anti-Inflammatory Drug in Determining NURR1 Expression and Thus Exploring the Progression of Parkinson's Disease.', PMID: 38466012, Year: 2024
+2025-07-31 15:35:24,633 - INFO - src.citations - Returning 7 citations
+2025-07-31 15:35:24,633 - INFO - src.qa_handler - Fetched 7 citations
+2025-07-31 15:35:24,633 - INFO - src.qa_handler - Question processing completed in 7.57 seconds (Source: direct_fallback_gpt-4o)
+2025-07-31 15:37:41,917 - INFO - src.citations - Proxy disabled in config - removing HTTP_PROXY from environment
+2025-07-31 15:37:41,917 - INFO - src.citations - Proxy disabled in config - removing HTTPS_PROXY from environment
+2025-07-31 15:37:41,917 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-31 15:37:41,918 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-31 15:37:41,918 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-31 15:37:41,918 - INFO - src.citations - Proxy not configured or disabled in config.json settings
+2025-07-31 15:37:41,918 - INFO - src.citations - NCBI API Key found in environment.
+2025-07-31 15:37:41,918 - INFO - src.citations - Initializing OpenAI client without proxy configuration
+2025-07-31 15:37:41,982 - INFO - src.citations - OpenAI client initialized for entity extraction.
+2025-07-31 15:37:42,034 - INFO - src.qa_handler - OpenAI client initialized for fallback.
+2025-07-31 15:37:48,190 - INFO - src.qa_handler - OpenAI client initialized for fallback.
+2025-07-31 15:37:48,190 - INFO - src.qa_handler - Processing question: What genes are associated with Parkinson's disease?
+2025-07-31 15:37:48,190 - INFO - src.qa_handler - Detected query type: gene
+2025-07-31 15:37:48,190 - INFO - src.qa_handler - use_llm_parent is set to false, using direct OpenAI fallback
+2025-07-31 15:37:48,190 - INFO - src.qa_handler - Attempting fallback using OpenAI model: gpt-4o
+2025-07-31 15:37:49,147 - INFO - src.qa_handler - Received fallback answer from gpt-4o
+2025-07-31 15:37:49,148 - INFO - src.qa_handler - Using direct fallback: gpt-4o
+2025-07-31 15:37:49,148 - INFO - src.qa_handler - Fetching citations for question: 'What genes are associated with Parkinson's disease?'
+2025-07-31 15:37:49,148 - INFO - src.citations - Searching PubMed for user query: 'What genes are associated with Parkinson's disease?' (called from src.qa_handler)
+2025-07-31 15:37:49,148 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-07-31 15:37:49,148 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-07-31 15:37:49,148 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-07-31 15:37:49,148 - INFO - src.citations - Entity extraction method: LLM-based
+2025-07-31 15:37:49,148 - INFO - src.citations - Extracting entities using OpenAI API
+2025-07-31 15:37:50,740 - INFO - src.citations - Extracted 1 entities using LLM: Diseases:1
+2025-07-31 15:37:50,740 - INFO - src.citations - Extracted entities - Diseases: 1
+2025-07-31 15:37:53,182 - INFO - src.citations - Generated LLM-optimized PubMed query: ("Parkinson Disease/genetics"[MeSH] OR "Parkinson Disease"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Association Studies"[MeSH Terms])
+2025-07-31 15:37:53,182 - INFO - src.citations - Optimized query: ("Parkinson Disease/genetics"[MeSH] OR "Parkinson Disease"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Association Studies"[MeSH Terms])
+2025-07-31 15:37:53,182 - INFO - src.citations - Constructed PubMed query: (("Parkinson Disease/genetics"[MeSH] OR "Parkinson Disease"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Association Studies"[MeSH Terms])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-07-31 15:37:53,183 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-07-31 15:37:53,183 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-07-31 15:37:56,149 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...
+2025-07-31 15:37:58,591 - INFO - src.citations - Primary search method successful - found 14 citations
+2025-07-31 15:37:58,591 - INFO - src.citations - PubMed search completed in 5.41 seconds.
+2025-07-31 15:37:58,591 - INFO - src.citations - Raw citations before sorting/filtering: 14
+2025-07-31 15:37:58,591 - INFO - src.citations - Limited citations from 14 to 7 based on max_citations=7
+2025-07-31 15:37:58,591 - INFO - src.citations - Potential genes identified in top citations: PINK1
+2025-07-31 15:37:58,591 - INFO - src.citations - Top citation 1: 'Gaucher disease provides a unique window into Parkinson disease pathogenesis.', PMID: 39107435, Year: 2024
+2025-07-31 15:37:58,591 - INFO - src.citations - Top citation 2: 'Disruption of Mitochondrial Homeostasis: The Role of PINK1 in Parkinson's Disease.', PMID: 34831247, Year: 2021
+2025-07-31 15:37:58,592 - INFO - src.citations - Top citation 3: 'The genetic architecture of Parkinson's disease.', PMID: 31521533, Year: 2020
+2025-07-31 15:37:58,592 - INFO - src.citations - Returning 7 citations
+2025-07-31 15:37:58,592 - INFO - src.qa_handler - Fetched 7 citations
+2025-07-31 15:37:58,592 - INFO - src.qa_handler - Question processing completed in 10.40 seconds (Source: direct_fallback_gpt-4o)
+2025-07-31 15:37:58,592 - INFO - src.qa_handler - Processing question: Which proteins are involved in DNA repair?
+2025-07-31 15:37:58,592 - INFO - src.qa_handler - Detected query type: protein
+2025-07-31 15:37:58,592 - INFO - src.qa_handler - use_llm_parent is set to false, using direct OpenAI fallback
+2025-07-31 15:37:58,592 - INFO - src.qa_handler - Attempting fallback using OpenAI model: gpt-4o
+2025-07-31 15:38:02,881 - INFO - src.qa_handler - Received fallback answer from gpt-4o
+2025-07-31 15:38:02,882 - INFO - src.qa_handler - Using direct fallback: gpt-4o
+2025-07-31 15:38:02,882 - INFO - src.qa_handler - Fetching citations for question: 'Which proteins are involved in DNA repair?'
+2025-07-31 15:38:02,883 - INFO - src.citations - Searching PubMed for user query: 'Which proteins are involved in DNA repair?' (called from src.qa_handler)
+2025-07-31 15:38:02,883 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-07-31 15:38:02,883 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-07-31 15:38:02,883 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-07-31 15:38:02,883 - INFO - src.citations - Entity extraction method: LLM-based
+2025-07-31 15:38:02,883 - INFO - src.citations - Extracting entities using OpenAI API
+2025-07-31 15:38:04,295 - INFO - src.citations - Extracted 1 entities using LLM: Pathways:1
+2025-07-31 15:38:04,296 - INFO - src.citations - Extracted entities - Pathways: 1
+2025-07-31 15:38:06,002 - INFO - src.citations - Generated LLM-optimized PubMed query: ("DNA Repair"[MeSH Terms] OR "DNA Repair"[Title/Abstract] OR "DNA repair pathways"[Title/Abstract]) AND ("Proteins"[MeSH Terms] OR "Protein"[Title/Abstract] OR "Proteins"[Title/Abstract] OR "Protein"[Substance Name])
+2025-07-31 15:38:06,003 - INFO - src.citations - Optimized query: ("DNA Repair"[MeSH Terms] OR "DNA Repair"[Title/Abstract] OR "DNA repair pathways"[Title/Abstract]) AND ("Proteins"[MeSH Terms] OR "Protein"[Title/Abstract] OR "Proteins"[Title/Abstract] OR "Protein"[Substance Name])
+2025-07-31 15:38:06,003 - INFO - src.citations - Constructed PubMed query: (("DNA Repair"[MeSH Terms] OR "DNA Repair"[Title/Abstract] OR "DNA repair pathways"[Title/Abstract]) AND ("Proteins"[MeSH Terms] OR "Protein"[Title/Abstract] OR "Proteins"[Title/Abstract] OR "Protein"[Substance Name])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-07-31 15:38:06,003 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-07-31 15:38:06,003 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-07-31 15:38:07,368 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...
+2025-07-31 15:38:09,966 - INFO - src.citations - Primary search method successful - found 14 citations
+2025-07-31 15:38:09,966 - INFO - src.citations - PubMed search completed in 3.96 seconds.
+2025-07-31 15:38:09,966 - INFO - src.citations - Raw citations before sorting/filtering: 14
+2025-07-31 15:38:09,967 - INFO - src.citations - Limited citations from 14 to 7 based on max_citations=7
+2025-07-31 15:38:09,967 - INFO - src.citations - Potential genes identified in top citations: CRISPR, SUMO
+2025-07-31 15:38:09,967 - INFO - src.citations - Top citation 1: 'Liquid‒liquid phase separation: roles and implications in future cancer treatment.', PMID: 37705755, Year: 2023
+2025-07-31 15:38:09,967 - INFO - src.citations - Top citation 2: 'CRISPR-based genome editing through the lens of DNA repair.', PMID: 35063100, Year: 2022
+2025-07-31 15:38:09,967 - INFO - src.citations - Top citation 3: 'DNA-Protein Crosslinks and Their Resolution.', PMID: 35303790, Year: 2022
+2025-07-31 15:38:09,967 - INFO - src.citations - Returning 7 citations
+2025-07-31 15:38:09,967 - INFO - src.qa_handler - Fetched 7 citations
+2025-07-31 15:38:09,967 - INFO - src.qa_handler - Question processing completed in 11.37 seconds (Source: direct_fallback_gpt-4o)
+2025-07-31 15:38:09,967 - INFO - src.qa_handler - Processing question: What drugs target EGFR?
+2025-07-31 15:38:09,968 - INFO - src.qa_handler - Detected query type: gene
+2025-07-31 15:38:09,968 - INFO - src.qa_handler - use_llm_parent is set to false, using direct OpenAI fallback
+2025-07-31 15:38:09,968 - INFO - src.qa_handler - Attempting fallback using OpenAI model: gpt-4o
+2025-07-31 15:38:11,687 - INFO - src.qa_handler - Received fallback answer from gpt-4o
+2025-07-31 15:38:11,688 - INFO - src.qa_handler - Using direct fallback: gpt-4o
+2025-07-31 15:38:11,688 - INFO - src.qa_handler - Fetching citations for question: 'What drugs target EGFR?'
+2025-07-31 15:38:11,689 - INFO - src.citations - Searching PubMed for user query: 'What drugs target EGFR?' (called from src.qa_handler)
+2025-07-31 15:38:11,689 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-07-31 15:38:11,689 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-07-31 15:38:11,689 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-07-31 15:38:11,689 - INFO - src.citations - Entity extraction method: LLM-based
+2025-07-31 15:38:11,689 - INFO - src.citations - Extracting entities using OpenAI API
+2025-07-31 15:38:12,891 - INFO - src.citations - Extracted 2 entities using LLM: Genes:1, Keywords:1
+2025-07-31 15:38:12,892 - INFO - src.citations - Extracted entities - Genes: 1, Keywords: 1
+2025-07-31 15:38:15,442 - INFO - src.citations - Generated LLM-optimized PubMed query: ("EGFR"[Gene Name] OR "Epidermal Growth Factor Receptor"[MeSH Terms]) AND ("Drugs"[Title/Abstract] OR "Drug Therapy"[MeSH Terms] OR "Pharmaceutical Preparations"[MeSH Terms]) AND ("Drug Therapy"[MeSH Subheading] OR "Antineoplastic Agents"[MeSH Terms] OR "Protein Kinase Inhibitors"[MeSH Terms])
+2025-07-31 15:38:15,442 - INFO - src.citations - Optimized query: ("EGFR"[Gene Name] OR "Epidermal Growth Factor Receptor"[MeSH Terms]) AND ("Drugs"[Title/Abstract] OR "Drug Therapy"[MeSH Terms] OR "Pharmaceutical Preparations"[MeSH Terms]) AND ("Drug Therapy"[MeSH Subheading] OR "Antineoplastic Agents"[MeSH Terms] OR "Protein Kinase Inhibitors"[MeSH Terms])
+2025-07-31 15:38:15,442 - INFO - src.citations - Constructed PubMed query: (("EGFR"[Gene Name] OR "Epidermal Growth Factor Receptor"[MeSH Terms]) AND ("Drugs"[Title/Abstract] OR "Drug Therapy"[MeSH Terms] OR "Pharmaceutical Preparations"[MeSH Terms]) AND ("Drug Therapy"[MeSH Subheading] OR "Antineoplastic Agents"[MeSH Terms] OR "Protein Kinase Inhibitors"[MeSH Terms])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-07-31 15:38:15,443 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-07-31 15:38:15,443 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-07-31 15:38:16,806 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...
+2025-07-31 15:38:19,180 - INFO - src.citations - Primary search method successful - found 14 citations
+2025-07-31 15:38:19,180 - INFO - src.citations - PubMed search completed in 3.74 seconds.
+2025-07-31 15:38:19,180 - INFO - src.citations - Raw citations before sorting/filtering: 14
+2025-07-31 15:38:19,180 - INFO - src.citations - Limited citations from 14 to 7 based on max_citations=7
+2025-07-31 15:38:19,180 - INFO - src.citations - Potential genes identified in top citations: EGFR, NSCLC
+2025-07-31 15:38:19,180 - INFO - src.citations - Top citation 1: 'New promises and challenges in the treatment of advanced non-small-cell lung cancer.', PMID: 39121882, Year: 2024
+2025-07-31 15:38:19,180 - INFO - src.citations - Top citation 2: 'Targeted Therapies for EGFR Exon 20 Insertion Mutation in Non-Small-Cell Lung Cancer.', PMID: 38892105, Year: 2024
+2025-07-31 15:38:19,180 - INFO - src.citations - Top citation 3: 'Non-Small Cell Lung Cancer Targeted Therapy: Drugs and Mechanisms of Drug Resistance.', PMID: 36499382, Year: 2022
+2025-07-31 15:38:19,180 - INFO - src.citations - Returning 7 citations
+2025-07-31 15:38:19,180 - INFO - src.qa_handler - Fetched 7 citations
+2025-07-31 15:38:19,181 - INFO - src.qa_handler - Question processing completed in 9.21 seconds (Source: direct_fallback_gpt-4o)
+2025-07-31 15:38:19,181 - INFO - src.qa_handler - Processing question: Which genes are mutated in breast cancer?
+2025-07-31 15:38:19,181 - INFO - src.qa_handler - Detected query type: gene
+2025-07-31 15:38:19,181 - INFO - src.qa_handler - use_llm_parent is set to false, using direct OpenAI fallback
+2025-07-31 15:38:19,181 - INFO - src.qa_handler - Attempting fallback using OpenAI model: gpt-4o
+2025-07-31 15:38:20,885 - INFO - src.qa_handler - Received fallback answer from gpt-4o
+2025-07-31 15:38:20,886 - INFO - src.qa_handler - Using direct fallback: gpt-4o
+2025-07-31 15:38:20,886 - INFO - src.qa_handler - Fetching citations for question: 'Which genes are mutated in breast cancer?'
+2025-07-31 15:38:20,886 - INFO - src.citations - Searching PubMed for user query: 'Which genes are mutated in breast cancer?' (called from src.qa_handler)
+2025-07-31 15:38:20,886 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-07-31 15:38:20,886 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-07-31 15:38:20,886 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-07-31 15:38:20,886 - INFO - src.citations - Entity extraction method: LLM-based
+2025-07-31 15:38:20,886 - INFO - src.citations - Extracting entities using OpenAI API
+2025-07-31 15:38:22,127 - INFO - src.citations - Extracted 1 entities using LLM: Diseases:1
+2025-07-31 15:38:22,128 - INFO - src.citations - Extracted entities - Diseases: 1
+2025-07-31 15:38:23,655 - INFO - src.citations - Generated LLM-optimized PubMed query: ("Breast Neoplasms/genetics"[MeSH] OR "breast cancer"[Title/Abstract]) AND ("Mutation"[MeSH Terms] OR mutation*[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract])
+2025-07-31 15:38:23,656 - INFO - src.citations - Optimized query: ("Breast Neoplasms/genetics"[MeSH] OR "breast cancer"[Title/Abstract]) AND ("Mutation"[MeSH Terms] OR mutation*[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract])
+2025-07-31 15:38:23,656 - INFO - src.citations - Constructed PubMed query: (("Breast Neoplasms/genetics"[MeSH] OR "breast cancer"[Title/Abstract]) AND ("Mutation"[MeSH Terms] OR mutation*[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-07-31 15:38:23,656 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-07-31 15:38:23,656 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-07-31 15:38:25,212 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...
+2025-07-31 15:38:27,434 - INFO - src.citations - Primary search method successful - found 14 citations
+2025-07-31 15:38:27,434 - INFO - src.citations - PubMed search completed in 3.78 seconds.
+2025-07-31 15:38:27,434 - INFO - src.citations - Raw citations before sorting/filtering: 14
+2025-07-31 15:38:27,434 - INFO - src.citations - Limited citations from 14 to 7 based on max_citations=7
+2025-07-31 15:38:27,434 - INFO - src.citations - Potential genes identified in top citations: BRCA, BRCA2
+2025-07-31 15:38:27,434 - INFO - src.citations - Top citation 1: 'Hereditary Breast Cancer: BRCA Mutations and Beyond.', PMID: 38777539, Year: 2024
+2025-07-31 15:38:27,434 - INFO - src.citations - Top citation 2: 'A comprehensive overview of metaplastic breast cancer: Features and treatments.', PMID: 38735837, Year: 2024
+2025-07-31 15:38:27,434 - INFO - src.citations - Top citation 3: 'Genetic Testing Enhances the Precision Diagnosis and Treatment of Breast Cancer.', PMID: 38068930, Year: 2023
+2025-07-31 15:38:27,434 - INFO - src.citations - Returning 7 citations
+2025-07-31 15:38:27,435 - INFO - src.qa_handler - Fetched 7 citations
+2025-07-31 15:38:27,435 - INFO - src.qa_handler - Question processing completed in 8.25 seconds (Source: direct_fallback_gpt-4o)
+2025-07-31 15:38:27,435 - INFO - src.qa_handler - Processing question: How many days will it take to aggregate parkinsons disease pathology in primary neurons?
+2025-07-31 15:38:27,435 - INFO - src.qa_handler - Detected query type: disease
+2025-07-31 15:38:27,435 - INFO - src.qa_handler - use_llm_parent is set to false, using direct OpenAI fallback
+2025-07-31 15:38:27,435 - INFO - src.qa_handler - Attempting fallback using OpenAI model: gpt-4o
+2025-07-31 15:38:28,123 - INFO - src.qa_handler - Received fallback answer from gpt-4o
+2025-07-31 15:38:28,124 - INFO - src.qa_handler - Using direct fallback: gpt-4o
+2025-07-31 15:38:28,124 - INFO - src.qa_handler - Fetching citations for question: 'How many days will it take to aggregate parkinsons disease pathology in primary neurons?'
+2025-07-31 15:38:28,124 - INFO - src.citations - Searching PubMed for user query: 'How many days will it take to aggregate parkinsons disease pathology in primary neurons?' (called from src.qa_handler)
+2025-07-31 15:38:28,125 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-07-31 15:38:28,125 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-07-31 15:38:28,125 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-07-31 15:38:28,125 - INFO - src.citations - Entity extraction method: LLM-based
+2025-07-31 15:38:28,125 - INFO - src.citations - Extracting entities using OpenAI API
+2025-07-31 15:38:29,579 - INFO - src.citations - Extracted 4 entities using LLM: Diseases:1, Keywords:3
+2025-07-31 15:38:29,580 - INFO - src.citations - Extracted entities - Diseases: 1, Keywords: 3
+2025-07-31 15:38:32,007 - INFO - src.citations - Generated LLM-optimized PubMed query: ("Parkinson Disease/pathology"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract]) AND ("Neurons"[MeSH Terms] OR "primary neurons"[Title/Abstract]) AND (aggregate*[Title/Abstract] OR aggregation[Title/Abstract]) AND ("Time Factors"[MeSH Terms] OR "days"[Title/Abstract])
+2025-07-31 15:38:32,008 - INFO - src.citations - Optimized query: ("Parkinson Disease/pathology"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract]) AND ("Neurons"[MeSH Terms] OR "primary neurons"[Title/Abstract]) AND (aggregate*[Title/Abstract] OR aggregation[Title/Abstract]) AND ("Time Factors"[MeSH Terms] OR "days"[Title/Abstract])
+2025-07-31 15:38:32,008 - INFO - src.citations - Constructed PubMed query: (("Parkinson Disease/pathology"[MeSH Terms] OR "Parkinson's disease"[Title/Abstract]) AND ("Neurons"[MeSH Terms] OR "primary neurons"[Title/Abstract]) AND (aggregate*[Title/Abstract] OR aggregation[Title/Abstract]) AND ("Time Factors"[MeSH Terms] OR "days"[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-07-31 15:38:32,009 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-07-31 15:38:32,009 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-07-31 15:38:33,327 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...
+2025-07-31 15:38:35,445 - INFO - src.citations - Primary search method successful - found 14 citations
+2025-07-31 15:38:35,445 - INFO - src.citations - PubMed search completed in 3.44 seconds.
+2025-07-31 15:38:35,445 - INFO - src.citations - Raw citations before sorting/filtering: 14
+2025-07-31 15:38:35,445 - INFO - src.citations - Limited citations from 14 to 7 based on max_citations=7
+2025-07-31 15:38:35,445 - INFO - src.citations - Potential genes identified in top citations: CSF, I416T, NURR1, PF-06447475, PSEN1
+2025-07-31 15:38:35,446 - INFO - src.citations - Top citation 1: 'Neural-induced human adipose tissue-derived stem cell secretome exerts neuroprotection against rotenone-induced Parkinson's disease in rats.', PMID: 40254594, Year: 2025
+2025-07-31 15:38:35,446 - INFO - src.citations - Top citation 2: 'PF-06447475 Molecule Attenuates the Neuropathology of Familial Alzheimer's and Coexistent Parkinson's Disease Markers in PSEN1 I416T Dopaminergic-like Neurons.', PMID: 40363838, Year: 2025
+2025-07-31 15:38:35,446 - INFO - src.citations - Top citation 3: 'Investigating the Effect of an Anti-Inflammatory Drug in Determining NURR1 Expression and Thus Exploring the Progression of Parkinson's Disease.', PMID: 38466012, Year: 2024
+2025-07-31 15:38:35,446 - INFO - src.citations - Returning 7 citations
+2025-07-31 15:38:35,446 - INFO - src.qa_handler - Fetched 7 citations
+2025-07-31 15:38:35,447 - INFO - src.qa_handler - Question processing completed in 8.01 seconds (Source: direct_fallback_gpt-4o)
+2025-07-31 15:39:25,028 - INFO - src.citations - Proxy disabled in config - removing HTTP_PROXY from environment
+2025-07-31 15:39:25,028 - INFO - src.citations - Proxy disabled in config - removing HTTPS_PROXY from environment
+2025-07-31 15:39:25,028 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-31 15:39:25,028 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-31 15:39:25,029 - INFO - src.citations - OpenAI library loaded for enhanced entity extraction
+2025-07-31 15:39:25,029 - INFO - src.citations - Proxy not configured or disabled in config.json settings
+2025-07-31 15:39:25,029 - INFO - src.citations - NCBI API Key found in environment.
+2025-07-31 15:39:25,029 - INFO - src.citations - Initializing OpenAI client without proxy configuration
+2025-07-31 15:39:25,093 - INFO - src.citations - OpenAI client initialized for entity extraction.
+2025-07-31 15:39:25,143 - INFO - src.qa_handler - OpenAI client initialized for fallback.
+2025-07-31 15:39:25,143 - INFO - src.qa_handler - Setting up primary model...
+2025-07-31 15:39:32,621 - INFO - src.qa_handler - Processing question: What genes are associated with Parkinson's disease?
+2025-07-31 15:39:32,621 - INFO - src.qa_handler - Detected query type: gene
+2025-07-31 15:39:34,782 - INFO - src.qa_handler - Fetching citations for question: 'What genes are associated with Parkinson's disease?'
+2025-07-31 15:39:34,783 - INFO - src.citations - Searching PubMed for user query: 'What genes are associated with Parkinson's disease?' (called from src.qa_handler)
+2025-07-31 15:39:34,783 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-07-31 15:39:34,783 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-07-31 15:39:34,783 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-07-31 15:39:34,783 - INFO - src.citations - Entity extraction method: LLM-based
+2025-07-31 15:39:34,783 - INFO - src.citations - Extracting entities using OpenAI API
+2025-07-31 15:39:35,915 - INFO - src.citations - Extracted 1 entities using LLM: Diseases:1
+2025-07-31 15:39:35,915 - INFO - src.citations - Extracted entities - Diseases: 1
+2025-07-31 15:39:37,768 - INFO - src.citations - Generated LLM-optimized PubMed query: ("Parkinson Disease/genetics"[MeSH] OR "Parkinson Disease"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Association Studies"[MeSH Terms])
+2025-07-31 15:39:37,768 - INFO - src.citations - Optimized query: ("Parkinson Disease/genetics"[MeSH] OR "Parkinson Disease"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Association Studies"[MeSH Terms])
+2025-07-31 15:39:37,768 - INFO - src.citations - Constructed PubMed query: (("Parkinson Disease/genetics"[MeSH] OR "Parkinson Disease"[Title/Abstract]) AND ("Genes"[MeSH Terms] OR gene*[Title/Abstract] OR "Genetic Association Studies"[MeSH Terms])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-07-31 15:39:37,768 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-07-31 15:39:37,768 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-07-31 15:39:39,764 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...
+2025-07-31 15:39:42,220 - INFO - src.citations - Primary search method successful - found 14 citations
+2025-07-31 15:39:42,220 - INFO - src.citations - PubMed search completed in 4.45 seconds.
+2025-07-31 15:39:42,221 - INFO - src.citations - Raw citations before sorting/filtering: 14
+2025-07-31 15:39:42,221 - INFO - src.citations - Limited citations from 14 to 7 based on max_citations=7
+2025-07-31 15:39:42,221 - INFO - src.citations - Potential genes identified in top citations: PINK1
+2025-07-31 15:39:42,221 - INFO - src.citations - Top citation 1: 'Gaucher disease provides a unique window into Parkinson disease pathogenesis.', PMID: 39107435, Year: 2024
+2025-07-31 15:39:42,221 - INFO - src.citations - Top citation 2: 'Disruption of Mitochondrial Homeostasis: The Role of PINK1 in Parkinson's Disease.', PMID: 34831247, Year: 2021
+2025-07-31 15:39:42,221 - INFO - src.citations - Top citation 3: 'The genetic architecture of Parkinson's disease.', PMID: 31521533, Year: 2020
+2025-07-31 15:39:42,221 - INFO - src.citations - Returning 7 citations
+2025-07-31 15:39:42,221 - INFO - src.qa_handler - Fetched 7 citations
+2025-07-31 15:39:42,222 - INFO - src.qa_handler - Question processing completed in 9.60 seconds (Source: primary_model)
+2025-07-31 15:39:42,222 - INFO - src.qa_handler - Processing question: Which proteins are involved in DNA repair?
+2025-07-31 15:39:42,222 - INFO - src.qa_handler - Detected query type: protein
+2025-07-31 15:39:42,893 - INFO - src.qa_handler - Fetching citations for question: 'Which proteins are involved in DNA repair?'
+2025-07-31 15:39:42,893 - INFO - src.citations - Searching PubMed for user query: 'Which proteins are involved in DNA repair?' (called from src.qa_handler)
+2025-07-31 15:39:42,893 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-07-31 15:39:42,893 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-07-31 15:39:42,893 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-07-31 15:39:42,893 - INFO - src.citations - Entity extraction method: LLM-based
+2025-07-31 15:39:42,893 - INFO - src.citations - Extracting entities using OpenAI API
+2025-07-31 15:39:45,887 - INFO - src.citations - Extracted 1 entities using LLM: Pathways:1
+2025-07-31 15:39:45,887 - INFO - src.citations - Extracted entities - Pathways: 1
+2025-07-31 15:39:47,862 - INFO - src.citations - Generated LLM-optimized PubMed query: ("DNA Repair"[MeSH Terms] OR "DNA Repair"[Title/Abstract]) AND ("Proteins"[MeSH Terms] OR "Protein"[Title/Abstract] OR "Proteins"[Title/Abstract])
+2025-07-31 15:39:47,863 - INFO - src.citations - Optimized query: ("DNA Repair"[MeSH Terms] OR "DNA Repair"[Title/Abstract]) AND ("Proteins"[MeSH Terms] OR "Protein"[Title/Abstract] OR "Proteins"[Title/Abstract])
+2025-07-31 15:39:47,863 - INFO - src.citations - Constructed PubMed query: (("DNA Repair"[MeSH Terms] OR "DNA Repair"[Title/Abstract]) AND ("Proteins"[MeSH Terms] OR "Protein"[Title/Abstract] OR "Proteins"[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-07-31 15:39:47,863 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-07-31 15:39:47,863 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-07-31 15:39:50,094 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...
+2025-07-31 15:39:52,516 - INFO - src.citations - Primary search method successful - found 14 citations
+2025-07-31 15:39:52,516 - INFO - src.citations - PubMed search completed in 4.65 seconds.
+2025-07-31 15:39:52,516 - INFO - src.citations - Raw citations before sorting/filtering: 14
+2025-07-31 15:39:52,516 - INFO - src.citations - Limited citations from 14 to 7 based on max_citations=7
+2025-07-31 15:39:52,517 - INFO - src.citations - Potential genes identified in top citations: SUMO
+2025-07-31 15:39:52,517 - INFO - src.citations - Top citation 1: 'Liquid‒liquid phase separation: roles and implications in future cancer treatment.', PMID: 37705755, Year: 2023
+2025-07-31 15:39:52,517 - INFO - src.citations - Top citation 2: 'DNA repair inhibitors and radiotherapy.', PMID: 35987813, Year: 2022
+2025-07-31 15:39:52,517 - INFO - src.citations - Top citation 3: 'DNA repair, recombination, and damage signaling.', PMID: 35137093, Year: 2022
+2025-07-31 15:39:52,517 - INFO - src.citations - Returning 7 citations
+2025-07-31 15:39:52,517 - INFO - src.qa_handler - Fetched 7 citations
+2025-07-31 15:39:52,517 - INFO - src.qa_handler - Question processing completed in 10.30 seconds (Source: primary_model)
+2025-07-31 15:39:52,517 - INFO - src.qa_handler - Processing question: What drugs target EGFR?
+2025-07-31 15:39:52,518 - INFO - src.qa_handler - Detected query type: gene
+2025-07-31 15:39:53,243 - INFO - src.qa_handler - Fetching citations for question: 'What drugs target EGFR?'
+2025-07-31 15:39:53,243 - INFO - src.citations - Searching PubMed for user query: 'What drugs target EGFR?' (called from src.qa_handler)
+2025-07-31 15:39:53,246 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-07-31 15:39:53,246 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-07-31 15:39:53,246 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-07-31 15:39:53,247 - INFO - src.citations - Entity extraction method: LLM-based
+2025-07-31 15:39:53,247 - INFO - src.citations - Extracting entities using OpenAI API
+2025-07-31 15:39:54,528 - INFO - src.citations - Extracted 3 entities using LLM: Genes:1, Keywords:2
+2025-07-31 15:39:54,529 - INFO - src.citations - Extracted entities - Genes: 1, Keywords: 2
+2025-07-31 15:39:57,201 - INFO - src.citations - Generated LLM-optimized PubMed query: ("EGFR"[Gene Name] OR "ErbB Receptors"[MeSH Terms]) AND ("Drugs"[Title/Abstract] OR "Pharmaceutical Preparations"[MeSH Terms] OR "Drug Therapy"[MeSH Terms]) AND ("Target"[Title/Abstract] OR "Targeted Therapy"[MeSH Terms])
+2025-07-31 15:39:57,201 - INFO - src.citations - Optimized query: ("EGFR"[Gene Name] OR "ErbB Receptors"[MeSH Terms]) AND ("Drugs"[Title/Abstract] OR "Pharmaceutical Preparations"[MeSH Terms] OR "Drug Therapy"[MeSH Terms]) AND ("Target"[Title/Abstract] OR "Targeted Therapy"[MeSH Terms])
+2025-07-31 15:39:57,201 - INFO - src.citations - Constructed PubMed query: (("EGFR"[Gene Name] OR "ErbB Receptors"[MeSH Terms]) AND ("Drugs"[Title/Abstract] OR "Pharmaceutical Preparations"[MeSH Terms] OR "Drug Therapy"[MeSH Terms]) AND ("Target"[Title/Abstract] OR "Targeted Therapy"[MeSH Terms])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-07-31 15:39:57,201 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-07-31 15:39:57,202 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-07-31 15:39:58,507 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...
+2025-07-31 15:40:00,850 - INFO - src.citations - Primary search method successful - found 14 citations
+2025-07-31 15:40:00,851 - INFO - src.citations - PubMed search completed in 3.65 seconds.
+2025-07-31 15:40:00,851 - INFO - src.citations - Raw citations before sorting/filtering: 14
+2025-07-31 15:40:00,851 - INFO - src.citations - Limited citations from 14 to 7 based on max_citations=7
+2025-07-31 15:40:00,852 - INFO - src.citations - Potential genes identified in top citations: EGFR, EREG, HER2, NSCLC
+2025-07-31 15:40:00,852 - INFO - src.citations - Top citation 1: 'HER2-targeted therapies beyond breast cancer - an update.', PMID: 39039196, Year: 2024
+2025-07-31 15:40:00,852 - INFO - src.citations - Top citation 2: 'Current status and breakthroughs in treating advanced non-small cell lung cancer with EGFR exon 20 insertion mutations.', PMID: 38774882, Year: 2024
+2025-07-31 15:40:00,852 - INFO - src.citations - Top citation 3: 'Current treatment strategies for EGFR-mutated non-small cell lung cancer: from first line to beyond osimertinib resistance.', PMID: 37279591, Year: 2023
+2025-07-31 15:40:00,852 - INFO - src.citations - Returning 7 citations
+2025-07-31 15:40:00,852 - INFO - src.qa_handler - Fetched 7 citations
+2025-07-31 15:40:00,852 - INFO - src.qa_handler - Question processing completed in 8.34 seconds (Source: primary_model)
+2025-07-31 15:40:00,853 - INFO - src.qa_handler - Processing question: Which genes are mutated in breast cancer?
+2025-07-31 15:40:00,853 - INFO - src.qa_handler - Detected query type: gene
+2025-07-31 15:40:01,215 - INFO - src.qa_handler - Fetching citations for question: 'Which genes are mutated in breast cancer?'
+2025-07-31 15:40:01,216 - INFO - src.citations - Searching PubMed for user query: 'Which genes are mutated in breast cancer?' (called from src.qa_handler)
+2025-07-31 15:40:01,216 - INFO - src.citations - Citation parameters: max_citations=7, prioritize_reviews=False, max_age_years=5
+2025-07-31 15:40:01,216 - INFO - src.citations - Environment check - NCBI_API_KEY: Available
+2025-07-31 15:40:01,216 - INFO - src.citations - Environment check - OPENAI_CLIENT: Available
+2025-07-31 15:40:01,216 - INFO - src.citations - Entity extraction method: LLM-based
+2025-07-31 15:40:01,216 - INFO - src.citations - Extracting entities using OpenAI API
+2025-07-31 15:40:02,319 - INFO - src.citations - Extracted 1 entities using LLM: Diseases:1
+2025-07-31 15:40:02,319 - INFO - src.citations - Extracted entities - Diseases: 1
+2025-07-31 15:40:04,209 - INFO - src.citations - Generated LLM-optimized PubMed query: ("Breast Neoplasms/genetics"[MeSH] OR "breast cancer"[Title/Abstract]) AND ("Genes, Neoplasm"[MeSH] OR "Gene Mutation"[MeSH] OR "mutation"[Title/Abstract] OR "mutated"[Title/Abstract] OR "mutations"[Title/Abstract])
+2025-07-31 15:40:04,209 - INFO - src.citations - Optimized query: ("Breast Neoplasms/genetics"[MeSH] OR "breast cancer"[Title/Abstract]) AND ("Genes, Neoplasm"[MeSH] OR "Gene Mutation"[MeSH] OR "mutation"[Title/Abstract] OR "mutated"[Title/Abstract] OR "mutations"[Title/Abstract])
+2025-07-31 15:40:04,209 - INFO - src.citations - Constructed PubMed query: (("Breast Neoplasms/genetics"[MeSH] OR "breast cancer"[Title/Abstract]) AND ("Genes, Neoplasm"[MeSH] OR "Gene Mutation"[MeSH] OR "mutation"[Title/Abstract] OR "mutated"[Title/Abstract] OR "mutations"[Title/Abstract])) AND ((2020/01/01[PDAT] : 2025/12/31[PDAT]))
+2025-07-31 15:40:04,210 - INFO - src.citations - Attempting primary search method (JSON esearch -> XML efetch)...
+2025-07-31 15:40:04,210 - INFO - src.citations - Trying JSON esearch -> XML efetch...
+2025-07-31 15:40:05,643 - INFO - src.citations - Found 14 PMIDs via JSON esearch, fetching details...

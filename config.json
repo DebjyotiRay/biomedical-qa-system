@@ -35,7 +35,7 @@
     "highlight_keywords": false,
     "include_citations": true,
     "max_new_tokens": 350,
-    "use_llm_parent": false
+    "use_llm_parent": true
   },
   "training": {
     "peft_method": "lora",
@@ -61,6 +61,7 @@
     "models": [
         "gpt-4o",
         "gpt-3.5-turbo"
-    ]
+    ],
+    "use_direct_fallback": false
   }
 }
